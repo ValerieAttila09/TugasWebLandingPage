@@ -10,26 +10,46 @@ import { useRef } from 'react';
 
 const Navbar = () => {
   const { toggleSidebar } = useSidebarStore();
-  const sidebarAnimationRef = useRef<HTMLSpanElement | []>([]);
+  const sidebarAnimationRef = useRef<HTMLSpanElement[]>([]);
+  const sidebarAnimationRefNd = useRef<HTMLSpanElement[]>([]);
 
-  const animateToggleAnimation = (target: HTMLSpanElement | null) => {
-    return gsap.fromTo(target, {
-      x: '100%',
+  const animateToggleAnimation = (target: gsap.TweenTarget) => {
+    gsap.fromTo(target, {
+      x: '50%',
     }, {
-      x: '0%',
-      duration: 0.25,
+      x: '200%',
+      stagger: 0.05,
+      duration: 0.5,
       ease: 'power2.out'
     });
   }
 
-  const addToToggleRefs = (el) => {
+  const animateToggleAnimationNd = (target: gsap.TweenTarget) => {
+    gsap.fromTo(target, {
+      x: '-200%',
+    }, {
+      x: '50%',
+      stagger: 0.05,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  }
+
+  const addToToggleRefs = (el: HTMLSpanElement | null) => {
     if (el && !sidebarAnimationRef.current.includes(el)) {
       sidebarAnimationRef.current.push(el);
+    }
+  };
+  
+  const addToToggleRefsNd = (el: HTMLSpanElement | null) => {
+    if (el && !sidebarAnimationRefNd.current.includes(el)) {
+      sidebarAnimationRefNd.current.push(el);
     }
   };
 
   useGSAP(() => {
     animateToggleAnimation(sidebarAnimationRef.current);
+    animateToggleAnimationNd(sidebarAnimationRefNd.current);
   }, { dependencies: [] })
 
   return (
@@ -39,17 +59,29 @@ const Navbar = () => {
         <Button
           onClick={toggleSidebar}
           type='button'
-          onMouseEnter={() => animateToggleAnimation(sidebarAnimationRef.current)}
-          onMouseLeave={() => animateToggleAnimation(sidebarAnimationRef.current)}
+          onMouseEnter={() => {
+            animateToggleAnimation(sidebarAnimationRef.current)
+            animateToggleAnimationNd(sidebarAnimationRefNd.current)
+          }}
+          onMouseLeave={() => {
+            animateToggleAnimation(sidebarAnimationRef.current)
+            animateToggleAnimationNd(sidebarAnimationRefNd.current)
+          }}
           variant={'ghost'}
           aria-label='Open navigation menu'
           className='relative overflow-hidden hover:bg-neutral-900 h-12 flex justify-center items-center w-[63px] border-r border-neutral-600/35'
         >
-          <span className='flex flex-col space-y-1'>
+          <span className='absolute inset-0 flex flex-col justify-center items-start space-y-1'>
             <span ref={addToToggleRefs} className='w-8 h-px bg-neutral-300' />
-            <span ref={addToToggleRefs} className='w-7 h-px bg-neutral-300' />
-            <span ref={addToToggleRefs} className='w-6 h-px bg-neutral-300' />
+            <span ref={addToToggleRefs} className='w-8 h-px bg-neutral-300' />
+            <span ref={addToToggleRefs} className='w-8 h-px bg-neutral-300' />
           </span>
+          <span className='absolute inset-0 flex flex-col justify-center items-start space-y-1'>
+            <span ref={addToToggleRefsNd} className='w-8 h-px bg-neutral-300' />
+            <span ref={addToToggleRefsNd} className='w-8 h-px bg-neutral-300' />
+            <span ref={addToToggleRefsNd} className='w-8 h-px bg-neutral-300' />
+          </span>
+            
         </Button>
       </div>
       <div className='flex items-center gap-6'>
