@@ -12,6 +12,7 @@ const Page = () => {
         primaryCTA="Start a Project"
         secondaryCTA="View Our Work"
       />
+      
     </div>
   );
 }

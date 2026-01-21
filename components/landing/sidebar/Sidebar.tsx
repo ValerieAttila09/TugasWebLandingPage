@@ -66,7 +66,7 @@ const Sidebar = () => {
               <div className='w-full space-y-2'>
                 {landingPageSidebarMenu.map((data, i) => {
                   const isActivePage =
-                    data.href == pathname ? 'bg-[#83Bd11] text-black' : 'bg-black text-white';
+                    data.href == pathname ? 'bg-violet-500 text-black' : 'bg-black text-white';
                   return (
                     <div
                       key={data.label}
@@ -116,7 +116,7 @@ const Sidebar = () => {
                           speed={50}
                           maxIterations={25}
                           revealDirection='start'
-                          className={'text-xs text-[#83Bd11] font-regular'}
+                          className={'text-xs text-violet-500 font-regular'}
                           encryptedClassName='text-xs'
                           animateOnParent={true}
                         />
