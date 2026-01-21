@@ -28,7 +28,7 @@ const Sidebar = () => {
         });
       } else {
         gsap.to(sidebarRef.current, {
-          x: '100%',
+          x: '-100%',
           duration: 0.5,
           ease: 'power3.inOut',
         });
@@ -44,6 +44,7 @@ const Sidebar = () => {
         widths[data.label] = menuRefs.current[data.label]!.offsetWidth;
       }
     });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuWidths(widths);
   }, []);
 
@@ -51,7 +52,7 @@ const Sidebar = () => {
     <>
       <div
         ref={sidebarRef}
-        className='fixed z-50 top-0 right-0 h-full sm:w-[720px] bg-black rounded-l-lg border translate-x-full'
+        className='absolute z-50 inset-y-0 left-0 sm:w-[720px] bg-black rounded-lg border border-neutral-400/35 -translate-x-full'
       >
         <div className='w-full h-full relative flex justify-between overflow-hidden'>
           <div className='w-full relative flex flex-col justify-between'>
