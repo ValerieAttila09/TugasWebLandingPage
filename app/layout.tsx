@@ -31,7 +31,7 @@ export default function RootLayout({
           <div className='fixed bg-neutral-950 z-5 top-0 right-0 left-0 border border-neutral-600/35'>
             <Navbar />
           </div>
-          <div className='fixed bg-neutral-950 z-4 left-0 top-0 bottom-0 w-16 border border-neutral-600/35 flex items-end justify-center'>
+          {/* <div className='fixed bg-neutral-950 z-4 left-0 top-0 bottom-0 w-16 border border-neutral-600/35 flex items-end justify-center'>
             <div className='relative w-full h-full'></div>
             <div className='absolute py-2 z-6 bottom-0 inset-x-0 flex flex-col justify-center items-center left-0 min-w-14 space-y-0.5'>
               <div className='w-2 h-px bg-black' />
@@ -52,7 +52,7 @@ export default function RootLayout({
               <div className='w-6 h-px bg-black' />
               <div className='w-2 h-px bg-black' />
             </div>
-          </div>
+          </div> */}
           {children}
         </main>
       </body>
