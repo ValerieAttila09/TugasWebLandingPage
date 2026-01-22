@@ -14,7 +14,7 @@ const AboutSection = () => {
       </div>
       <div className="col-span-5">
         <p className="text-lg text-neutral-300">
-          We help brands and rproducts communicate clearly through thoughtful design and solid engineering
+          We help brands and products communicate clearly through thoughtful design and solid engineering
         </p>
         <br />
         <p className="text-lg text-neutral-300">
