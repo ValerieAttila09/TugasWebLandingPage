@@ -18,7 +18,7 @@ declare global {
 
   type IntegrationLogo = {
     name: string;
-    icon: any;
+    icon: string;
   }
 
   type CountOnData = {
