@@ -1,3 +1,5 @@
+'use client';
+
 import { SpotlightCardProps, Position } from '@/types/interfaces';
 import React, { useRef, useState } from 'react';
 
