@@ -89,3 +89,9 @@ export const CURVE_FUNCTIONS: Record<string, (p: number) => number> = {
   'ease-out': p => 1 - Math.pow(1 - p, 2),
   'ease-in-out': p => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2)
 };
+
+export const CountOnData: CountOnData[] = [
+  { number: 100, label: "More Secure", symbol: "%" },
+  { number: 5750, label: "Users Active", symbol: "+" },
+  { number: 250, label: "Projects Completed", symbol: "+" },
+];

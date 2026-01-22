@@ -20,6 +20,12 @@ declare global {
     name: string;
     icon: any;
   }
+
+  type CountOnData = {
+    number: number;
+    label: string;
+    symbol: string;
+  }
 };
 
 export { };
