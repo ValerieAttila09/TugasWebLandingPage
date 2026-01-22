@@ -1,5 +1,6 @@
 import SpotlightCard from '@/components/ReactBits/SpotlightCard';
-import TiltedCard from '@/components/ReactBits/TiltedCard';
+import SpotlightCard from '@/components/ReactBits/SpotlightCard';
+import { IntegrationLogo } from '@/lib/constants';
 import { IntegrationLogo } from '@/lib/constants';
 import Image from 'next/image';
 import React from 'react';
