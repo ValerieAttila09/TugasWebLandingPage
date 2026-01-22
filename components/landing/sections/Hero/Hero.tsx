@@ -32,14 +32,14 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
           <h3 className="text-center text-md text-neutral-300 font-normal">{subHeadline}</h3>
         </div>
         <div className="flex items-center justify-center gap-3">
-          <Button variant={'default'} className='rounded-full flex items-center justify-center p-px group bg-linear-to-tr from-violet-500 via-purple-600 to-violet-200'>
-            <div className="w-full h-full rounded-full bg-neutral-950 px-5 py-2 flex items-center justify-center group-hover:bg-neutral-900 transition-all">
+          <Button variant={'default'} className='rounded-md flex items-center justify-center p-px group bg-linear-to-tr from-violet-500 via-purple-600 to-violet-200'>
+            <div className="w-full h-full rounded-md bg-neutral-950 px-5 py-2 flex items-center justify-center group-hover:bg-neutral-900 transition-all">
               <span className="text-white">
                 {primaryCTA}
               </span>
             </div>
           </Button>
-          <Button variant={'ghost'} className='rounded-full bg-neutral-950 border border-neutral-700 text-neutral-200 hover:bg-neutral-900 hover:text-neutral-300'>{secondaryCTA}</Button>
+          <Button variant={'ghost'} className='rounded-md bg-neutral-950 border border-neutral-700 text-neutral-200 hover:bg-neutral-900 hover:text-neutral-300'>{secondaryCTA}</Button>
         </div>
       </div>
     </div>
