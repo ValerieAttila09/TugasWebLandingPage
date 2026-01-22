@@ -1,6 +1,8 @@
 "use client";
 
+import AboutSection from "@/components/landing/sections/About/About";
 import HeroSection from "@/components/landing/sections/Hero/Hero";
+import IntegrationsSection from "@/components/landing/sections/Integrations/Integrations";
 
 const Page = () => {
 
@@ -12,7 +14,8 @@ const Page = () => {
         primaryCTA="Start a Project"
         secondaryCTA="View Our Work"
       />
-      
+      <AboutSection />
+      {/* <IntegrationsSection/> */}
     </div>
   );
 }
