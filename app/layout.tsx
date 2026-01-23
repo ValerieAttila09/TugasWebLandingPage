@@ -23,16 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bricolagueFont.className} antialiased bg-black`}>
-        <main className="relative min-h-screen bg-black">
-          <div className='fixed bg-neutral-950/25 backdrop-blur-sm z-50 top-0 right-0 left-0 border border-neutral-600/35'>
+        <main className="relative min-h-screen bg-black font-normal">
             <Navbar />
-          </div>
           <FadeContent blur={true} className="bg-black" duration={1000} delay={500} easing="power2.out" initialOpacity={0}>
             <Sidebar />
             {children}
           </FadeContent>
         </main>
-        <GradualBlur
+        {/* <GradualBlur
           target="page"
           position="bottom"
           height="7rem"
@@ -41,7 +39,7 @@ export default function RootLayout({
           curve="bezier"
           exponential
           opacity={1}
-        />
+        /> */}
 
       </body>
     </html>

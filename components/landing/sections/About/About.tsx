@@ -13,11 +13,11 @@ const AboutSection = () => {
         <h1 className="max-w-xl text-5xl font-semibold text-white">A Digital Studio Focused on Clarity & Impact</h1>
       </div>
       <div className="col-span-5">
-        <p className="text-lg text-neutral-300">
+        <p className="text-lg text-neutral-300 font-thin">
           We help brands and products communicate clearly through thoughtful design and solid engineering
         </p>
         <br />
-        <p className="text-lg text-neutral-300">
+        <p className="text-lg text-neutral-300 font-thin">
           By combining modern technologies, clean visual systems, and purposeful motion, we create digital experiences that are not only visually compelling, but also functional, scalable, and user-focused.
         </p>
         <br />
