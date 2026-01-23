@@ -30,7 +30,7 @@ export default function RootLayout({
             {children}
           </FadeContent>
         </main>
-        {/* <GradualBlur
+        <GradualBlur
           target="page"
           position="bottom"
           height="7rem"
@@ -39,7 +39,7 @@ export default function RootLayout({
           curve="bezier"
           exponential
           opacity={1}
-        /> */}
+        />
 
       </body>
     </html>

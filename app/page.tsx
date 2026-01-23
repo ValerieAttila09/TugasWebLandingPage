@@ -1,6 +1,7 @@
 "use client";
 
 import AboutSection from "@/components/landing/sections/About/About";
+import FooterSection from "@/components/landing/sections/Footer/Footer";
 import HeroSection from "@/components/landing/sections/Hero/Hero";
 import IntegrationsSection from "@/components/landing/sections/Integrations/Integrations";
 
@@ -16,6 +17,7 @@ const Page = () => {
       />
       <IntegrationsSection/>
       <AboutSection />
+      <FooterSection/>
     </div>
   );
 }

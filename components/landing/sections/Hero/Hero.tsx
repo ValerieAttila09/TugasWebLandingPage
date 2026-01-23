@@ -8,7 +8,7 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
     <div className='relative w-full h-screen overflow-hidden'>
       <div className="absolute z-1 inset-0 w-full h-full">
         <div className='w-full h-full relative'>
-          <FloatingLines
+          {/* <FloatingLines
             enabledWaves={["top", "middle", "bottom"]}
             lineCount={5}
             lineDistance={5}
@@ -16,17 +16,10 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
             bendStrength={-0.5}
             interactive={true}
             parallax={true}
-          />
+          /> */}
         </div>
       </div>
       <div className="absolute inset-0 z-2 flex flex-col justify-center items-start gap-6 p-12">
-        {/* <div className="rounded-full flex items-center justify-center p-px group bg-linear-to-tr from-violet-500 via-purple-600 to-violet-200">
-          <div className="w-full h-full rounded-full bg-neutral-900 px-3 py-1 flex items-center justify-center gap-2 group-hover:bg-neutral-900 transition-all">
-            <div className="size-1 bg-violet-500" />
-            <span className="text-xs font-medium text-violet-500">POWERED BY AI</span>
-            <div className="size-1 bg-violet-500" />
-          </div>
-        </div> */}
         <div className="max-w-3xl flex flex-col items-center justify-center gap-4">
           <h1 className="text-6xl/14 text-white font-bold">{headline}</h1>
           <h3 className="text-md text-neutral-200 font-thin">{subHeadline}</h3>

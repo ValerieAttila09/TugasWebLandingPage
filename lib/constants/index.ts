@@ -95,3 +95,41 @@ export const CountOnData: CountOnData[] = [
   { number: 5750, label: "Users Active", symbol: "+" },
   { number: 250, label: "Projects Completed", symbol: "+" },
 ];
+
+export const ServicesSectionData: { title: string; description: string }[] = [
+  {
+    title: "Web Design & Development",
+    description: "We design and build high-performance websites using modern frameworks. Every build is optimized for speed, maintainability, and long-term scalability."
+  }, 
+  {
+    title: "UI/UX Design",
+    description: "Interfaces crafted with a strong focus on usability, accessability, and visual hierarchy, ensuring users can navigate and understand your products effortlessly."
+  },
+  {
+    title: "Motion & Interaction",
+    description: "Subtle yet meaningful animations that enhance user expirience, guide attention, and bring interfaces to life without unnecessary disctraction.",  
+  }, 
+  {
+    title: "Branding & Visual Systems",
+    description: "We create consistent visual identities and design systems that help brands stay recognizable, flexible, and future-ready."
+  }
+];
+
+export const ProcessSectionData: { title: string; description: string }[] = [
+  {
+    title: "Discovery",
+    description: "We begin by understanding your goals, audience, challenges to establish a clear project direction."
+  },
+  {
+    title: "Design",
+    description: "We translate insights into structured layouts, visual systems, and interaction concepts."
+  },
+  {
+    title: "Development",
+    description: "We build using modern, scalable technologies with performance and maintanability in mind",
+  },
+  {
+    title: "Lauch & Iterate",
+    description: "After launch, we refine, optimize, and support continuous improvements when needed."
+  }
+];
