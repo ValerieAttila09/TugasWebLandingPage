@@ -80,12 +80,12 @@ const FAQSection = () => {
 							</svg>
 						</div>
 						<div className="">
-							<h1 className="text-2xl font-semibold text-white">Sarah Johnson</h1>
+							<h3 className="text-2xl font-semibold text-white">Sarah Johnson</h3>
 							<span className="text-sm font-thin text-neutral-400">Customer Success Manager</span>
 						</div>
 					</div>
 					<div className="space-y-6">
-						<h1 className="text-2xl font-semibold text-white">Still have questions?</h1>
+						<h2 className="text-2xl font-semibold text-white">Still have questions?</h2>
 						<p className="text-md text-neutral-300 font-thin">Can't find what you're looking for? Our team is here to help! Whether you need clarification, have a specific question, or want to learn more about our services, we'd love to hear from you. Let's get you the answers you need.</p>
 					</div>
 				</div>
@@ -98,7 +98,7 @@ const FAQSection = () => {
 									onClick={() => handleQuestionClick(index)}
 									className="w-full flex items-center justify-between py-4 px-0 hover:opacity-80 transition-opacity cursor-pointer"
 								>
-									<h1 className="text-2xl font-semibold text-white text-left">{data.question}</h1>
+									<h3 className="text-2xl font-semibold text-white text-left">{data.question}</h3>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
