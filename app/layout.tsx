@@ -5,6 +5,7 @@ import Navbar from "@/components/landing/navbar/Navbar";
 import Sidebar from "@/components/landing/sidebar/Sidebar";
 import GradualBlur from "@/components/ReactBits/GradualBlur";
 import FadeContent from "@/components/ReactBits/FadeContent";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const bricolagueFont = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -23,25 +24,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bricolagueFont.className} antialiased bg-black`}>
-        <main className="relative min-h-screen bg-black font-normal">
+        <SmoothScrollProvider>
+          <main className="relative min-h-screen bg-black font-normal">
             <Navbar />
-          <FadeContent blur={true} className="bg-black" duration={1000} delay={500} easing="power2.out" initialOpacity={0}>
-            <Sidebar />
-            {children}
-          </FadeContent>
-        </main>
-        <GradualBlur
-          target="page"
-          position="bottom"
-          height="7rem"
-          strength={2}
-          divCount={5}
-          curve="bezier"
-          exponential
-          opacity={1}
-        />
-
+            <FadeContent blur={true} className="bg-black" duration={1000} delay={500} easing="power2.out" initialOpacity={0}>
+              <Sidebar />
+              {children}
+            </FadeContent>
+          </main>
+          <GradualBlur
+            target="page"
+            position="bottom"
+            height="7rem"
+            strength={2}
+            divCount={5}
+            curve="bezier"
+            exponential
+            opacity={1}
+          />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
 }
+
