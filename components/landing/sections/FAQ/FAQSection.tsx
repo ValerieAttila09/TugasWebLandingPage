@@ -96,7 +96,7 @@ return (
 </div>
 </div>
 
-<div ref={rightContainerRef} className="border border-red-500 w-full md:w-1/2 lg:w-3/5 space-y-8">
+<div ref={rightContainerRef} className="w-full md:w-1/2 lg:w-3/5 space-y-8">
 {FAQSectionData.map((data, index) => {
 return (
 <div className="space-y-0" key={data.question}>
