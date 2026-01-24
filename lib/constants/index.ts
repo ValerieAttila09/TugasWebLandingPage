@@ -133,3 +133,47 @@ export const ProcessSectionData: { title: string; description: string }[] = [
     description: "After launch, we refine, optimize, and support continuous improvements when needed."
   }
 ];
+
+export const PricingSectionData: PricingSectionData = {
+  pricingDescription: [
+    { 
+      label: "SERVICE PACKAGES",
+      title: "Grow your business with proven strategies.",
+      description: "Choose from our comprehensive marketing packages designed to scale your business from startup to enterprise level success.",
+      additionalContent: "All packages include a free consultation and strategy session."
+    },
+    {
+      label: "CUSTOM SOLUTION",
+      title: "Need a tailored approach?",
+      description: "Contact us for custom marketing solutions or to discuss specific campaign requirements that align with your business goals."
+    },
+    {
+      label: "SUPPORT",
+      title: "Ongoing optimization",
+      description: "We continuously monitor and optimize your campaigns for maximum ROI. Need adjustments? We're here to help. Contact us"
+    }
+  ],
+  pricingOfferDetail: [
+    {
+      title: "Starter",
+      subtitle: "Perfect for small businesses",
+      price: 12.9,
+      guaranteedServices:["3 Social media platforms", "Basic performance tracking"],
+      benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
+    },
+    {
+      title: "Pro",
+      subtitle: "Complete marketing solution",
+      price: 35.9,
+      guaranteedServices:["All major platforms included", "Advanced analytics & reporting"],
+      benefits: ["Advanced SEO Optimization", "Google Ads Management", "Facebook & Instagram Ads", "Email Marketing Campaigns","Content Strategy", "Competitor Analysis", "Conversion Optimization", "Landing Page Design", "Video Content Creation", "Influencer Partnerships", "500+ Marketing Templates", "All Starter features included"],
+    },
+    {
+      title: "Enterprise",
+      subtitle: "Unlimited growth potential",
+      price: 99.9,
+      guaranteedServices:["3 Social media platforms", "Basic performance tracking"],
+      benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
+    },
+  ]
+}

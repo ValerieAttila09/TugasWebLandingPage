@@ -4,6 +4,7 @@ import AboutSection from "@/components/landing/sections/About/About";
 import FooterSection from "@/components/landing/sections/Footer/Footer";
 import HeroSection from "@/components/landing/sections/Hero/Hero";
 import IntegrationsSection from "@/components/landing/sections/Integrations/Integrations";
+import PricingSection from "@/components/landing/sections/Pricing/PricingSection";
 
 const Page = () => {
 
@@ -17,6 +18,7 @@ const Page = () => {
       />
       <IntegrationsSection/>
       <AboutSection />
+      <PricingSection/>
       <FooterSection/>
     </div>
   );

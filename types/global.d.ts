@@ -26,6 +26,23 @@ declare global {
     label: string;
     symbol: string;
   }
+
+  type PricingSectionData = {
+    pricingDescription: {
+      label: string;
+      title: string;
+      description: string;
+      additionalContent?: string | undefined;
+    }[];
+    pricingOfferDetail: {
+      title: string;
+      subtitle: string;
+      price: number;
+      guaranteedServices: string[];
+      benefits: string[];
+    }[];
+  }
+
 };
 
 export { };

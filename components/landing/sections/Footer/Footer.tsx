@@ -28,7 +28,7 @@ const FooterSection = () => {
           <Button variant={'outline'} className='rounded-sm bg-neutral-950 border border-neutral-800 text-white'>Cookie Settings</Button>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <Button variant={'outline'} className='rounded-sm bg-neutral-950 border border-neutral-800 text-white'>Languages</Button>
+              <div className='rounded-sm px-4 py-2 bg-neutral-950 border border-neutral-800 text-white'>Languages</div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuGroup>
