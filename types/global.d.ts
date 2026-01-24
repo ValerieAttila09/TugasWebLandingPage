@@ -43,6 +43,11 @@ declare global {
     }[];
   }
 
+  type FAQSectionData = {
+    question: string;
+    answers: string;
+  }
+
 };
 
 export { };

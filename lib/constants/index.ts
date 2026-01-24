@@ -177,3 +177,38 @@ export const PricingSectionData: PricingSectionData = {
     },
   ]
 }
+
+export const FAQSectionData: FAQSectionData[] = [
+  {
+    question: "What services does your studio provide?",
+    answers: "We offer end-to-end digital services, including web design and development, UI/UX design, motion and interaction design, as well as branding and visual systems. Each project is tailored to the specific goals and needs of our clients.",
+  },
+  {
+    question: "What types of clients do you usually work with?",
+    answers: "We work with startups, growing businesses, and established brands that value clarity, quality, and long-term scalability. Whether you are launching a new product or refining an existing one, we adapt our approach to fit your stage.",
+  },
+  {
+    question: "What is your typical project timeline?",
+    answers: "Project timelines vary depending on scope and complexity. Most projects typically take between 3 to 8 weeks, covering discovery, design, development, and launch. A detailed timeline is provided before the project begins.",
+  },
+  {
+    question: "Do you offer custom designs or use templates?",
+    answers: "All our projects are custom-designed. We do not rely on generic templates, ensuring each solution reflects your brand identity and project objectives while remaining flexible and scalable.",
+  },
+  {
+    question: "How do you handle revisions and feedback?",
+    answers: "We work in clear, structured phases and encourage feedback at key milestones. This approach ensures revisions are efficient, focused, and aligned with the project goals without unnecessary back-and-forth.",
+  },
+  {
+    question: "Will the website be optimized for performance and SEO?",
+    answers: "Yes. Performance and SEO are considered from the start. We follow best practices for clean code, responsive design, accessibility, and optimization to ensure your website performs well across devices and search engines.",
+  },
+  {
+    question: "Do you provide ongoing support after launch?",
+    answers: "We offer post-launch support and maintenance options, including updates, optimizations, and feature enhancements, depending on your needs.",
+  },
+  {
+    question: "How do we start a project with your studio?",
+    answers: "You can start by reaching out through our contact form. We'll schedule an initial discussion to understand your goals, scope, and timeline before proposing the next steps.",
+  },
+];
