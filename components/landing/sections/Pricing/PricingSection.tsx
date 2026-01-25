@@ -2,11 +2,14 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { PricingSectionData } from '@/lib/constants';
 import { InfoIcon } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 const PricingSection = () => {
+
+  const [pricingSelection, setPricingSelection] = useState({ category: "" });
+
   return (
-    <div className='min-h-screen w-full p-6 sm:p-12 md:p-18 grid grid-cols-2 gap-6 sm:gap-16 md:gap-32'>
+    <div className='min-h-screen bg-linear-to-b from-black to-[#070609] border-y border-neutral-800 w-full p-6 sm:p-12 md:p-18 grid grid-cols-2 gap-6 sm:gap-16 md:gap-32'>
       <div className="col-span-1 space-y-52 pe-6">
         {PricingSectionData.pricingDescription.map((data) => {
           return (
@@ -16,7 +19,7 @@ const PricingSection = () => {
               <p className="text-md text-neutral-300 font-thin">{data.description}</p>
               {data.additionalContent && (
                 <div className="rounded-md flex items-center gap-1 px-4 py-2 border border-neutral-700">
-                  <InfoIcon className='text-neutral-400 w-3 h-3'/>
+                  <InfoIcon className='text-neutral-400 w-3 h-3' />
                   <span className="text-sm font-thin text-neutral-300">
                     {data.additionalContent}
                   </span>
@@ -28,16 +31,18 @@ const PricingSection = () => {
       </div>
       <div className="col-span-1 space-y-4">
         {PricingSectionData.pricingOfferDetail.map((data) => {
+          const isActiveSelection = data.title == pricingSelection.category;
+          const setColor = isActiveSelection ? "border-violet-900 shadow-lg shadow-purple-950 bg-[#080510]" : "border-neutral-800 shadow-none bg-[#060407]";
           return (
-            <div key={data.title} className="w-full rounded-lg border border-neutral-800 p-10">
+            <div key={data.title} onClick={() => setPricingSelection({ category: data.title })} className={`relative cursor-pointer w-full rounded-lg border border-neutral-800 p-10 hover:border-violet-950 transition-all ${setColor}`}>
               <div className="w-full flex items-center justify-between">
                 <div className="">
                   <h1 className="text-2xl text-white font-semibold">{data.title}</h1>
                   <p className="text-md text-neutral-300 font-thin">{data.subtitle}</p>
                 </div>
                 <span className="flex items-center gap-0.5">
-                  <span className="text-4xl text-white font-semibold">${data.price}</span>
-                  <span className="text-md text-neutral-300 font-thin">/month</span>
+                  <span className="text-4xl text-white font-semibold">{data.price}</span>
+                  <span className="text-md text-neutral-300 font-thin">{data.price == "FREE" ? "" : "/month"}</span>
                 </span>
               </div>
               <Separator className='my-6 bg-neutral-700' />
@@ -58,7 +63,7 @@ const PricingSection = () => {
                 {data.benefits.map((benefitsData, i) => {
                   return (
                     <div key={benefitsData} className="col-span-1 flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-neutral-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-5 text-green-600">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                       </svg>
                       <span className="text-md text-neutral-300 font-thin text-nowrap">{benefitsData}</span>
@@ -69,6 +74,13 @@ const PricingSection = () => {
               <div className="mt-10">
                 <Button variant={'default'} className='w-full rounded-sm border border-neutral-800 bg-neutral-950 hover:bg-neutral-900 hover:border-neutral-700'>Get Started</Button>
               </div>
+              {isActiveSelection && (
+                <div className="absolute -top-3 -right-3 size-8 rounded-full shadow-md shadow-green-950 border border-green-900 bg-neutral-950 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4 text-green-600">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                </div>
+              )}
             </div>
           );
         })}

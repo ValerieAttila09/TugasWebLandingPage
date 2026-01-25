@@ -1,12 +1,4 @@
-// import AtlassianLogo from '../../assets/icons/Atlassian_id37ar18Ew_1.png';
-// import DockerLogo from '../../assets/icons/Docker_ido12OLE9Y_0.png';
-// import DribbbleLogo from '../../assets/icons/Dribbble_Logo.png';
-// import FigmaLogo from '../../assets/icons/Figma_Symbol_0.png';
-// import FramerLogo from '../../assets/icons/Framer_Logo.png';
-// import GithubLogo from '../../assets/icons/GitHub_Symbol_0.png';
-// import GoogleLogo from '../../assets/icons/Google_Symbol_0.png';
-// import KubernetesLogo from '../../assets/icons/Kubernetes_idda6T8Ya6_1.png';
-
+import { Globe, Code, Zap } from 'lucide-react';
 import { GradualBlurProps } from "@/components/ReactBits/GradualBlur";
 
 export const landingPageNavMenu: LandingPageNavMenu[] = [
@@ -96,47 +88,47 @@ export const CountOnData: CountOnData[] = [
   { number: 250, label: "Projects Completed", symbol: "+" },
 ];
 
-export const ServicesSectionData: { title: string; description: string }[] = [
+export const FeaturesSectionData: { title: string; description: string }[] = [
   {
-    title: "Web Design & Development",
-    description: "We design and build high-performance websites using modern frameworks. Every build is optimized for speed, maintainability, and long-term scalability."
-  }, 
-  {
-    title: "UI/UX Design",
-    description: "Interfaces crafted with a strong focus on usability, accessability, and visual hierarchy, ensuring users can navigate and understand your products effortlessly."
+    title: "Backend as a Service",
+    description: "Build scalable backend infrastructure without managing servers. Deploy APIs, handle authentication, and manage data with zero infrastructure overhead."
   },
   {
-    title: "Motion & Interaction",
-    description: "Subtle yet meaningful animations that enhance user expirience, guide attention, and bring interfaces to life without unnecessary disctraction.",  
-  }, 
+    title: "Real-time Database",
+    description: "Sync data across your applications instantly with our real-time database. Perfect for collaborative apps, live dashboards, and responsive user experiences."
+  },
   {
-    title: "Branding & Visual Systems",
-    description: "We create consistent visual identities and design systems that help brands stay recognizable, flexible, and future-ready."
+    title: "Orchestration & Automation",
+    description: "Automate workflows, schedule tasks, and integrate services seamlessly. Connect your entire tech stack with powerful orchestration tools built for developers."
+  },
+  {
+    title: "Developer-Friendly APIs",
+    description: "Well-documented REST and WebSocket APIs with SDKs for multiple languages. Get up and running in minutes with code examples and comprehensive documentation."
   }
 ];
 
-export const ProcessSectionData: { title: string; description: string }[] = [
-  {
-    title: "Discovery",
-    description: "We begin by understanding your goals, audience, challenges to establish a clear project direction."
-  },
-  {
-    title: "Design",
-    description: "We translate insights into structured layouts, visual systems, and interaction concepts."
-  },
-  {
-    title: "Development",
-    description: "We build using modern, scalable technologies with performance and maintanability in mind",
-  },
-  {
-    title: "Lauch & Iterate",
-    description: "After launch, we refine, optimize, and support continuous improvements when needed."
-  }
-];
+// export const ProcessSectionData: { title: string; description: string }[] = [
+//   {
+//     title: "Discovery",
+//     description: "We begin by understanding your goals, audience, challenges to establish a clear project direction."
+//   },
+//   {
+//     title: "Design",
+//     description: "We translate insights into structured layouts, visual systems, and interaction concepts."
+//   },
+//   {
+//     title: "Development",
+//     description: "We build using modern, scalable technologies with performance and maintanability in mind",
+//   },
+//   {
+//     title: "Lauch & Iterate",
+//     description: "After launch, we refine, optimize, and support continuous improvements when needed."
+//   }
+// ];
 
 export const PricingSectionData: PricingSectionData = {
   pricingDescription: [
-    { 
+    {
       label: "SERVICE PACKAGES",
       title: "Grow your business with proven strategies.",
       description: "Choose from our comprehensive marketing packages designed to scale your business from startup to enterprise level success.",
@@ -157,22 +149,22 @@ export const PricingSectionData: PricingSectionData = {
     {
       title: "Starter",
       subtitle: "Perfect for small businesses",
-      price: 12.9,
-      guaranteedServices:["3 Social media platforms", "Basic performance tracking"],
+      price: "FREE",
+      guaranteedServices: ["3 Social media platforms", "Basic performance tracking"],
       benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
     },
     {
       title: "Pro",
       subtitle: "Complete marketing solution",
-      price: 35.9,
-      guaranteedServices:["All major platforms included", "Advanced analytics & reporting"],
-      benefits: ["Advanced SEO Optimization", "Google Ads Management", "Facebook & Instagram Ads", "Email Marketing Campaigns","Content Strategy", "Competitor Analysis", "Conversion Optimization", "Landing Page Design", "Video Content Creation", "Influencer Partnerships", "500+ Marketing Templates", "All Starter features included"],
+      price: "$35.9",
+      guaranteedServices: ["All major platforms included", "Advanced analytics & reporting"],
+      benefits: ["Advanced SEO Optimization", "Google Ads Management", "Facebook & Instagram Ads", "Email Marketing Campaigns", "Content Strategy", "Competitor Analysis", "Conversion Optimization", "Landing Page Design", "Video Content Creation", "Influencer Partnerships", "500+ Marketing Templates", "All Starter features included"],
     },
     {
       title: "Enterprise",
       subtitle: "Unlimited growth potential",
-      price: 99.9,
-      guaranteedServices:["3 Social media platforms", "Basic performance tracking"],
+      price: "$99.9",
+      guaranteedServices: ["3 Social media platforms", "Basic performance tracking"],
       benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
     },
   ]
@@ -181,34 +173,387 @@ export const PricingSectionData: PricingSectionData = {
 export const FAQSectionData: FAQSectionData[] = [
   {
     question: "What services does your studio provide?",
-    answers: "We offer end-to-end digital services, including web design and development, UI/UX design, motion and interaction design, as well as branding and visual systems. Each project is tailored to the specific goals and needs of our clients.",
+    answer: "We offer end-to-end digital services, including web design and development, UI/UX design, motion and interaction design, as well as branding and visual systems. Each project is tailored to the specific goals and needs of our clients.",
   },
   {
     question: "What types of clients do you usually work with?",
-    answers: "We work with startups, growing businesses, and established brands that value clarity, quality, and long-term scalability. Whether you are launching a new product or refining an existing one, we adapt our approach to fit your stage.",
+    answer: "We work with startups, growing businesses, and established brands that value clarity, quality, and long-term scalability. Whether you are launching a new product or refining an existing one, we adapt our approach to fit your stage.",
   },
   {
     question: "What is your typical project timeline?",
-    answers: "Project timelines vary depending on scope and complexity. Most projects typically take between 3 to 8 weeks, covering discovery, design, development, and launch. A detailed timeline is provided before the project begins.",
+    answer: "Project timelines vary depending on scope and complexity. Most projects typically take between 3 to 8 weeks, covering discovery, design, development, and launch. A detailed timeline is provided before the project begins.",
   },
   {
     question: "Do you offer custom designs or use templates?",
-    answers: "All our projects are custom-designed. We do not rely on generic templates, ensuring each solution reflects your brand identity and project objectives while remaining flexible and scalable.",
+    answer: "All our projects are custom-designed. We do not rely on generic templates, ensuring each solution reflects your brand identity and project objectives while remaining flexible and scalable.",
   },
   {
     question: "How do you handle revisions and feedback?",
-    answers: "We work in clear, structured phases and encourage feedback at key milestones. This approach ensures revisions are efficient, focused, and aligned with the project goals without unnecessary back-and-forth.",
+    answer: "We work in clear, structured phases and encourage feedback at key milestones. This approach ensures revisions are efficient, focused, and aligned with the project goals without unnecessary back-and-forth.",
   },
   {
     question: "Will the website be optimized for performance and SEO?",
-    answers: "Yes. Performance and SEO are considered from the start. We follow best practices for clean code, responsive design, accessibility, and optimization to ensure your website performs well across devices and search engines.",
+    answer: "Yes. Performance and SEO are considered from the start. We follow best practices for clean code, responsive design, accessibility, and optimization to ensure your website performs well across devices and search engines.",
   },
   {
     question: "Do you provide ongoing support after launch?",
-    answers: "We offer post-launch support and maintenance options, including updates, optimizations, and feature enhancements, depending on your needs.",
+    answer: "We offer post-launch support and maintenance options, including updates, optimizations, and feature enhancements, depending on your needs.",
   },
   {
     question: "How do we start a project with your studio?",
-    answers: "You can start by reaching out through our contact form. We'll schedule an initial discussion to understand your goals, scope, and timeline before proposing the next steps.",
+    answer: "You can start by reaching out through our contact form. We'll schedule an initial discussion to understand your goals, scope, and timeline before proposing the next steps.",
+  },
+];
+
+export const DottedMapMarkersData = [
+  {
+    lat: 40.7128,
+    lng: -74.006,
+    size: 0.3,
+  }, // New York
+  {
+    lat: 34.0522,
+    lng: -118.2437,
+    size: 0.3,
+  }, // Los Angeles
+  {
+    lat: 51.5074,
+    lng: -0.1278,
+    size: 0.3,
+  }, // London
+  {
+    lat: -33.8688,
+    lng: 151.2093,
+    size: 0.3,
+  }, // Sydney
+  {
+    lat: 48.8566,
+    lng: 2.3522,
+    size: 0.3,
+  }, // Paris
+  {
+    lat: 35.6762,
+    lng: 139.6503,
+    size: 0.3,
+  }, // Tokyo
+  {
+    lat: 55.7558,
+    lng: 37.6176,
+    size: 0.3,
+  }, // Moscow
+  {
+    lat: 39.9042,
+    lng: 116.4074,
+    size: 0.3,
+  }, // Beijing
+  {
+    lat: 28.6139,
+    lng: 77.209,
+    size: 0.3,
+  }, // New Delhi
+  {
+    lat: -23.5505,
+    lng: -46.6333,
+    size: 0.3,
+  }, // São Paulo
+  {
+    lat: 1.3521,
+    lng: 103.8198,
+    size: 0.3,
+  }, // Singapore
+  {
+    lat: 25.2048,
+    lng: 55.2708,
+    size: 0.3,
+  }, // Dubai
+  {
+    lat: 52.52,
+    lng: 13.405,
+    size: 0.3,
+  }, // Berlin
+  {
+    lat: 19.4326,
+    lng: -99.1332,
+    size: 0.3,
+  }, // Mexico City
+  {
+    lat: -26.2041,
+    lng: 28.0473,
+    size: 0.3,
+  }, // Johannesburg
+];
+
+// Connection Setup Integration
+export const CODES_CONNECTION_SETUP = {
+  Go: {
+    code: `package xenore
+
+import (
+  "bytes"
+  "encoding/json"
+  "net/http"
+  "time"
+)
+
+type Client struct {
+  APIKey  string
+  BaseURL string
+  Client  *http.Client
+}
+
+func NewClient(apiKey string) *Client {
+  return &Client{
+    APIKey:  apiKey,
+    BaseURL: "https://api.xenora.studio",
+    Client: &http.Client{
+      Timeout: 10 * time.Second,
+    },
+  }
+}
+
+func (c *Client) RegisterProject(projectName string) error {
+  payload := map[string]string{
+    "name": projectName,
+  }
+
+  body, _ := json.Marshal(payload)
+
+  req, err := http.NewRequest(
+    "POST",
+    c.BaseURL+"/v1/projects",
+    bytes.NewBuffer(body),
+  )
+  if err != nil {
+    return err
+  }
+
+  req.Header.Set("Authorization", "Bearer "+c.APIKey)
+  req.Header.Set("Content-Type", "application/json")
+
+  resp, err := c.Client.Do(req)
+  if err != nil {
+    return err
+  }
+  defer resp.Body.Close()
+
+  return nil
+}`,
+    description: 'Send project metadata from the Go backend to your website platform.'
+  },
+  Python: {
+    code: `import requests
+from typing import Dict
+
+class KinetixClient:
+    def __init__(self, api_key: str, base_url: str = "https://api.xenora.studio"):
+        self.api_key = api_key
+        self.base_url = base_url
+
+    def sync_project(self, project_id: str, metadata: Dict):
+        response = requests.post(
+            f"{self.base_url}/v1/projects/{project_id}/sync",
+            json=metadata,
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            },
+            timeout=10
+        )
+
+        response.raise_for_status()
+        return response.json()`,
+    description: 'Connect Python projects for reporting or automation tasks.'
+  },
+  TypeScript: {
+    code: `// xenora-client.ts
+export interface KinetixConfig {
+  apiKey: string;
+  baseUrl?: string;
+}
+
+export class KinetixClient {
+  private apiKey: string;
+  private baseUrl: string;
+
+  constructor(config: KinetixConfig) {
+    this.apiKey = config.apiKey;
+    this.baseUrl = config.baseUrl ?? "https://api.xenora.studio";
+  }
+
+  async connectProject(projectId: string) {
+    const response = await fetch(
+      \`\${this.baseUrl}/v1/projects/\${projectId}/connect\`,
+      {
+        method: "POST",
+        headers: {
+          "Authorization": \`Bearer \${this.apiKey}\`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to connect project");
+    }
+
+    return response.json();
+  }
+}`,
+    description: 'Connect your frontend project or Node.js app to your website platform.'
+  }
+};
+
+// Database Schema Integration
+export const CODES_DATABASE_SCHEMA = {
+  Go: {
+    code: `package kinetixdb
+
+import "github.com/kinetix/platform-go/db"
+
+func RegisterSchemas() error {
+	return db.Register(
+		db.Schema("projects",
+			db.UUID("id").Primary(),
+			db.String("name").Required(),
+			db.Enum("environment", []string{"dev", "staging", "prod"}),
+			db.Timestamp("created_at").Auto(),
+		),
+		db.Schema("events",
+			db.UUID("id").Primary(),
+			db.UUID("project_id").Index(),
+			db.String("type"),
+			db.JSON("payload"),
+			db.Timestamp("created_at").Auto(),
+		),
+	)
+}`,
+    description: 'Register schema to the platform from your Go backend service.'
+  },
+  Python: {
+    code: `from kinetix.db import Model, fields
+
+class Project(Model):
+    table = "projects"
+
+    id = fields.UUID(primary_key=True)
+    name = fields.String(required=True)
+    environment = fields.Enum(["development", "staging", "production"])
+    created_at = fields.Timestamp(auto_now_add=True)
+
+class Event(Model):
+    table = "events"
+
+    id = fields.UUID(primary_key=True)
+    project_id = fields.UUID(index=True)
+    type = fields.String()
+    payload = fields.JSON()
+    created_at = fields.Timestamp(auto_now_add=True)`,
+    description: 'Access schema project from your Python service or data pipeline.'
+  },
+  TypeScript: {
+    code: `// kinetix/schema.ts
+import { defineSchema, Field, Relations } from "@kinetix/platform-db";
+
+export const ProjectSchema = defineSchema("projects", {
+  id: Field.uuid({ primary: true }),
+  name: Field.string({ required: true }),
+  environment: Field.enum(["development", "staging", "production"]),
+  createdAt: Field.timestamp({ default: "now" }),
+});
+
+export const EventSchema = defineSchema("events", {
+  id: Field.uuid({ primary: true }),
+  projectId: Field.uuid({ index: true }),
+  type: Field.string(),
+  payload: Field.json(),
+  createdAt: Field.timestamp({ default: "now" }),
+});
+
+export const relations = Relations.define({
+  project: Relations.one(ProjectSchema, {
+    hasMany: [EventSchema],
+  }),
+});`,
+    description: 'Define database schema project connected directly to the Kinetix platform.'
+  },
+};
+
+// WebSocket Integration
+export const CODES_WEBSOCKET_INTEGRATION = {
+  Go: {
+    code: `package kinetixrealtime
+
+import "github.com/kinetix/platform-go/realtime"
+
+func PublishDeployment(projectID string, status string) error {
+	client := realtime.NewClient(realtime.Config{
+		APIKey: "KINETIX_API_KEY",
+	})
+
+	return client.Publish("project:status", map[string]string{
+		"projectId": projectID,
+		"status":    status,
+	})
+}`,
+    description: 'Send real-time events from your backend service.'
+  },
+  Python: {
+    code: `from kinetix.realtime import RealtimeClient
+
+client = RealtimeClient(api_key="KINETIX_API_KEY")
+
+@client.on("project:events")
+def handle_event(event):
+    print("Event received:", event)
+
+@client.on("project:status")
+def handle_status(status):
+    print("Status updated:", status)
+
+client.connect()`,
+    description: 'Listen to events for automation or alerting.'
+  },
+  TypeScript: {
+    code: `// kinetix/realtime.ts
+import { KinetixSocket } from "@kinetix/platform-realtime";
+
+const socket = new KinetixSocket({
+  apiKey: process.env.NEXT_PUBLIC_KINETIX_KEY!,
+});
+
+socket.connect();
+
+socket.subscribe("project:events", (event) => {
+  console.log("New event received:", event);
+});
+
+socket.subscribe("project:status", (status) => {
+  console.log("Project status updated:", status);
+});`,
+    description: 'Listen to real-time project events in your web dashboard.'
+  },
+};
+
+// Default export for backward compatibility
+export const CODES = CODES_CONNECTION_SETUP;
+
+export const INTEGRATIONS = [
+  {
+    id: 'connection-setup',
+    icon: Globe,
+    title: 'Connection Setup',
+    description: 'Connect to Xenora platform with HTTP request',
+  },
+  {
+    id: 'database-schema',
+    icon: Code,
+    title: 'Database Schema',
+    description: 'Define database schema with easy-to-understand syntax',
+  },
+  {
+    id: 'websocket-integration',
+    icon: Zap,
+    title: 'WebSocket Integration',
+    description: 'Real-time communication with WebSockets',
   },
 ];

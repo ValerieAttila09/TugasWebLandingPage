@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+/* ===== FONT VARIABLES ===== */
+:root {
+  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+}
 /* ===== SMOOTH SCROLL OPTIMIZATION ===== */
 
 /* Disable default scroll behavior untuk GSAP control */
@@ -28,7 +33,7 @@ body {
 
 /* Untuk smooth scroll yang optimal */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -201,4 +206,28 @@ body {
 
 @utility direction-reverse {
   animation-direction: reverse;
+}
+
+/* ===== CODE SYNTAX HIGHLIGHTING ===== */
+/* Ensure code blocks use JetBrains Mono font */
+pre,
+code,
+[class*="language-"],
+[class*="hljs"] {
+  font-family: var(--font-jetbrains-mono) !important;
+}
+
+/* Shiki generated code styling */
+pre code {
+  font-family: var(--font-jetbrains-mono) !important;
+}
+
+/* Line numbers styling */
+code .line-number {
+  font-family: var(--font-jetbrains-mono) !important;
+}
+
+/* Code container */
+div[data-slot="install-tabs-content"] code {
+  font-family: var(--font-jetbrains-mono) !important;
 }

@@ -8,7 +8,7 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
     <div className='relative w-full h-screen overflow-hidden'>
       <div className="absolute z-1 inset-0 w-full h-full">
         <div className='w-full h-full relative'>
-          {/* <FloatingLines
+          <FloatingLines
             enabledWaves={["top", "middle", "bottom"]}
             lineCount={5}
             lineDistance={5}
@@ -16,7 +16,7 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
             bendStrength={-0.5}
             interactive={true}
             parallax={true}
-          /> */}
+          />
         </div>
       </div>
       <div className="absolute inset-0 z-2 flex flex-col justify-center items-start gap-6 p-12">

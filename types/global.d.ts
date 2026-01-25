@@ -37,7 +37,7 @@ declare global {
     pricingOfferDetail: {
       title: string;
       subtitle: string;
-      price: number;
+      price: number | string;
       guaranteedServices: string[];
       benefits: string[];
     }[];

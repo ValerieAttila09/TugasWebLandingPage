@@ -8,17 +8,17 @@ const AboutSection = () => {
       <div className="col-span-7 flex flex-col items-start justify-start gap-4">
         <div className="flex items-center gap-3">
           <div className="w-2 h-1 bg-white" />
-          <h3 className="text-sm font-semibold text-white">ABOUT US</h3>
+          <h3 className="text-sm font-semibold text-white">ABOUT XENORA</h3>
         </div>
-        <h1 className="max-w-xl text-5xl font-semibold text-white">A Digital Studio Focused on Clarity & Impact</h1>
+        <h1 className="max-w-xl text-5xl font-semibold text-white">Backend as a Service Platform for Modern Development</h1>
       </div>
       <div className="col-span-5">
         <p className="text-lg text-neutral-300 font-thin">
-          We help brands and products communicate clearly through thoughtful design and solid engineering
+          Xenora is a comprehensive Backend as a Service (BaaS) platform designed to accelerate your application development with powerful, ready-to-use features and infrastructure.
         </p>
         <br />
         <p className="text-lg text-neutral-300 font-thin">
-          By combining modern technologies, clean visual systems, and purposeful motion, we create digital experiences that are not only visually compelling, but also functional, scalable, and user-focused.
+          From application and web development to orchestration, real-time databases, and beyond, Xenora provides the tools and services you need to build, scale, and manage modern digital applications with ease and efficiency.
         </p>
         <br />
         <Button variant={'ghost'} className='rounded-sm border border-neutral-800 hover:bg-neutral-950 text-neutral-300 hover:text-white'>Read more</Button>

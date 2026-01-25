@@ -3,7 +3,7 @@ import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/landing/navbar/Navbar";
 import Sidebar from "@/components/landing/sidebar/Sidebar";
-import GradualBlur from "@/components/ReactBits/GradualBlur";
+import GradualBlurContainer from "@/components/providers/GradualBlurContainer";
 import FadeContent from "@/components/ReactBits/FadeContent";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
@@ -32,7 +32,7 @@ export default function RootLayout({
               {children}
             </FadeContent>
           </main>
-          <GradualBlur
+          <GradualBlurContainer
             target="page"
             position="bottom"
             height="7rem"
@@ -47,4 +47,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
