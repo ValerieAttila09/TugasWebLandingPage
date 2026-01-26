@@ -208,8 +208,6 @@ body {
   animation-direction: reverse;
 }
 
-/* ===== CODE SYNTAX HIGHLIGHTING ===== */
-/* Ensure code blocks use JetBrains Mono font */
 pre,
 code,
 [class*="language-"],
@@ -217,17 +215,20 @@ code,
   font-family: var(--font-jetbrains-mono) !important;
 }
 
-/* Shiki generated code styling */
 pre code {
   font-family: var(--font-jetbrains-mono) !important;
 }
 
-/* Line numbers styling */
 code .line-number {
   font-family: var(--font-jetbrains-mono) !important;
 }
 
-/* Code container */
 div[data-slot="install-tabs-content"] code {
   font-family: var(--font-jetbrains-mono) !important;
+}
+
+@layer components {
+  .container-wrapper {
+    @apply min-h-screen w-full p-6 sm:p-12 md:p-18
+  }
 }

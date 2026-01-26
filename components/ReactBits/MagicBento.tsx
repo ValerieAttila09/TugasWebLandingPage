@@ -53,7 +53,7 @@ const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLO
     position: absolute;
     width: 4px;
     height: 4px;
-    border-radius: 50%;
+    border-radius: 10%;
     background: rgba(${color}, 1);
     box-shadow: 0 0 6px rgba(${color}, 0.6);
     pointer-events: none;
@@ -275,7 +275,7 @@ const ParticleCard: React.FC<{
         position: absolute;
         width: ${maxDistance * 2}px;
         height: ${maxDistance * 2}px;
-        border-radius: 50%;
+        border-radius: 10%;
         background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
         left: ${x - maxDistance}px;
         top: ${y - maxDistance}px;
@@ -352,7 +352,7 @@ const GlobalSpotlight: React.FC<{
       position: fixed;
       width: 800px;
       height: 800px;
-      border-radius: 50%;
+      border-radius: 10%;
       pointer-events: none;
       background: radial-gradient(circle,
         rgba(${glowColor}, 0.15) 0%,
@@ -598,7 +598,7 @@ const MagicBento: React.FC<BentoProps> = ({
             right: -2px;
             bottom: -2px;
             background: rgba(${glowColor}, 0.2);
-            border-radius: 50%;
+            border-radius: 10%;
             z-index: -1;
           }
           
@@ -653,7 +653,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-md border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 
@@ -781,7 +781,7 @@ const MagicBento: React.FC<BentoProps> = ({
                       position: absolute;
                       width: ${maxDistance * 2}px;
                       height: ${maxDistance * 2}px;
-                      border-radius: 50%;
+                      border-radius: 10%;
                       background: radial-gradient(circle, rgba(${glowColor}, 0.4) 0%, rgba(${glowColor}, 0.2) 30%, transparent 70%);
                       left: ${x - maxDistance}px;
                       top: ${y - maxDistance}px;

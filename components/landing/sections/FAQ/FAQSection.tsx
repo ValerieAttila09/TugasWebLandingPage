@@ -22,7 +22,7 @@ const FAQSection = () => {
         ScrollTrigger.create({
           trigger: wrapperRef.current,
           start: "top 12%",
-          end: "bottom 50%",
+          end: "bottom 30%",
           pin: leftContainerRef.current,
           pinSpacing: true,
           pinType: "transform",
@@ -75,7 +75,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className='min-h-screen w-full p-6 sm:p-12 md:p-18'>
+    <div className='container-wrapper'>
       <div ref={wrapperRef} className="w-full sm:relative flex flex-col md:flex-row items-start gap-8 md:gap-16 lg:gap-32">
         <div ref={leftContainerRef} className="w-full md:w-1/2 lg:w-2/5 space-y-10">
           <div className="flex items-center gap-4">

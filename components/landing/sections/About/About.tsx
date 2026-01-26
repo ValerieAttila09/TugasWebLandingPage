@@ -4,7 +4,7 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <div className='min-h-screen w-full p-6 sm:p-12 md:p-18 grid grid-cols-12'>
+    <div className='container-wrapper grid grid-cols-12'>
       <div className="col-span-7 flex flex-col items-start justify-start gap-4">
         <div className="flex items-center gap-3">
           <div className="w-2 h-1 bg-white" />

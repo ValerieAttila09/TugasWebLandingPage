@@ -1,53 +1,12 @@
 import { Button } from '@/components/ui/button';
+import { footerLinks } from '@/lib/constants';
 import { ArrowRight, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
 const FooterSection = () => {
-  const footerLinks = {
-    Product: [
-      { label: 'API Reference', href: '#' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Pricing', href: '#' },
-      { label: 'Security', href: '#' },
-      { label: 'Status', href: '#' },
-      { label: 'Roadmap', href: '#' },
-    ],
-    Resources: [
-      { label: 'Blog', href: '#' },
-      { label: 'Guides', href: '#' },
-      { label: 'Changelog', href: '#' },
-      { label: 'Community', href: '#' },
-      { label: 'Support', href: '#' },
-      { label: 'Resources', href: '#' },
-    ],
-    Developers: [
-      { label: 'GitHub', href: '#' },
-      { label: 'Examples', href: '#' },
-      { label: 'SDKs', href: '#' },
-      { label: 'Integration', href: '#' },
-      { label: 'Webhooks', href: '#' },
-      { label: 'Architecture', href: '#' },
-    ],
-    Company: [
-      { label: 'About', href: '#' },
-      { label: 'Contact', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Press', href: '#' },
-      { label: 'Partners', href: '#' },
-      { label: 'Book a demo', href: '#' },
-    ],
-  };
-
-  const features = [
-    { icon: '∞', label: 'Unlimited API Calls' },
-    { icon: '⚡', label: 'High Performance' },
-    { icon: '🔒', label: 'Enterprise Security' },
-    { icon: '💬', label: 'Priority Support' },
-  ];
-
   return (
-    <div className='w-full px-6 sm:px-12 md:px-18 py-24 border-t border-neutral-800 bg-neutral-950'>
+    <div className='container-wrapper py-24 border-t border-neutral-800 bg-neutral-950'>
       {/* CTA Section */}
       <div className="max-w-7xl mx-auto mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
@@ -62,33 +21,9 @@ const FooterSection = () => {
               <Button className='bg-white text-black hover:bg-neutral-100 rounded-lg px-6 py-2 font-semibold'>
                 Start Building
               </Button>
-              <Button variant='outline' className='border-neutral-700 hover:bg-neutral-900 text-white rounded-lg px-6 py-2'>
+              <Button variant='outline' className='border-neutral-700 hover:bg-neutral-900 text-neutral-800 hover:text-white rounded-lg px-6 py-2'>
                 View Pricing
               </Button>
-            </div>
-          </div>
-
-          {/* Pricing Card */}
-          <div className="bg-gradient-to-br from-neutral-900 to-neutral-950 border border-neutral-800 rounded-2xl p-8">
-            <div className="flex justify-between items-start mb-6">
-              <div>
-                <p className="text-neutral-500 text-sm mb-2">Starting at</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-bold text-white">0</span>
-                  <span className="text-2xl text-neutral-500">₹</span>
-                </div>
-                <p className="text-neutral-400 text-sm mt-2">Free forever tier</p>
-              </div>
-            </div>
-            <div className="space-y-3">
-              {features.slice(0, 3).map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div className="size-5 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-300 text-xs">
-                    ✓
-                  </div>
-                  <span className="text-neutral-300 text-sm">{feature.label}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>

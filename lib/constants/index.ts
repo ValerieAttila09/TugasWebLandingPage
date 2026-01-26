@@ -107,65 +107,46 @@ export const FeaturesSectionData: { title: string; description: string }[] = [
   }
 ];
 
-// export const ProcessSectionData: { title: string; description: string }[] = [
-//   {
-//     title: "Discovery",
-//     description: "We begin by understanding your goals, audience, challenges to establish a clear project direction."
-//   },
-//   {
-//     title: "Design",
-//     description: "We translate insights into structured layouts, visual systems, and interaction concepts."
-//   },
-//   {
-//     title: "Development",
-//     description: "We build using modern, scalable technologies with performance and maintanability in mind",
-//   },
-//   {
-//     title: "Lauch & Iterate",
-//     description: "After launch, we refine, optimize, and support continuous improvements when needed."
-//   }
-// ];
-
 export const PricingSectionData: PricingSectionData = {
   pricingDescription: [
     {
       label: "SERVICE PACKAGES",
-      title: "Grow your business with proven strategies.",
-      description: "Choose from our comprehensive marketing packages designed to scale your business from startup to enterprise level success.",
-      additionalContent: "All packages include a free consultation and strategy session."
+      title: "Scale your backend infrastructure.",
+      description: "Choose from our comprehensive BaaS packages designed to support your application from prototype to production-scale success.",
+      additionalContent: "All packages include 99.9% uptime SLA and free technical onboarding."
     },
     {
       label: "CUSTOM SOLUTION",
-      title: "Need a tailored approach?",
-      description: "Contact us for custom marketing solutions or to discuss specific campaign requirements that align with your business goals."
+      title: "Need enterprise features?",
+      description: "Contact us for custom BaaS solutions tailored to your specific infrastructure, compliance, and scalability requirements."
     },
     {
       label: "SUPPORT",
-      title: "Ongoing optimization",
-      description: "We continuously monitor and optimize your campaigns for maximum ROI. Need adjustments? We're here to help. Contact us"
+      title: "24/7 Technical Support",
+      description: "Our expert team monitors your infrastructure continuously. Get priority support, performance optimization, and instant assistance when needed."
     }
   ],
   pricingOfferDetail: [
     {
       title: "Starter",
-      subtitle: "Perfect for small businesses",
+      subtitle: "Perfect for prototypes and MVPs",
       price: "FREE",
-      guaranteedServices: ["3 Social media platforms", "Basic performance tracking"],
-      benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
+      guaranteedServices: ["5GB Database Storage", "1M API Requests/month"],
+      benefits: ["REST & WebSocket APIs", "Real-time Database", "Basic Authentication", "Up to 2 Projects", "Community Support", "Standard Performance"],
     },
     {
       title: "Pro",
-      subtitle: "Complete marketing solution",
-      price: "$35.9",
-      guaranteedServices: ["All major platforms included", "Advanced analytics & reporting"],
-      benefits: ["Advanced SEO Optimization", "Google Ads Management", "Facebook & Instagram Ads", "Email Marketing Campaigns", "Content Strategy", "Competitor Analysis", "Conversion Optimization", "Landing Page Design", "Video Content Creation", "Influencer Partnerships", "500+ Marketing Templates", "All Starter features included"],
+      subtitle: "Complete backend solution",
+      price: "$29.9",
+      guaranteedServices: ["500GB Database Storage", "50M API Requests/month", "Advanced Analytics"],
+      benefits: ["All Starter features", "Advanced Authentication (OAuth, JWT)", "Database Orchestration", "Scheduled Tasks & Automation", "WebSocket Streaming", "Email & SMS Integration", "Advanced Monitoring", "Custom Domains", "Priority Support", "Data Backup & Recovery", "Up to 50 Projects", "99.9% Uptime SLA"],
     },
     {
       title: "Enterprise",
-      subtitle: "Unlimited growth potential",
-      price: "$99.9",
-      guaranteedServices: ["3 Social media platforms", "Basic performance tracking"],
-      benefits: ["Social Media Management", "Content Creation", "Basic Analytics", "Monthly Reports"],
+      subtitle: "Unlimited scale and control",
+      price: "Custom",
+      guaranteedServices: ["Unlimited Storage", "Unlimited API Requests", "Dedicated Infrastructure"],
+      benefits: ["All Pro features", "White-label Solutions", "Custom SLA & Support", "Dedicated Account Manager", "Advanced Security & Compliance", "Multi-region Deployment", "Custom Integrations", "Load Balancing", "CDN Included", "Advanced DDoS Protection", "Custom Development", "Unlimited Projects"],
     },
   ]
 }
@@ -556,4 +537,46 @@ export const INTEGRATIONS = [
     title: 'WebSocket Integration',
     description: 'Real-time communication with WebSockets',
   },
+];
+
+export const footerLinks = {
+  Product: [
+    { label: 'API Reference', href: '#' },
+    { label: 'Documentation', href: '#' },
+    { label: 'Pricing', href: '#' },
+    { label: 'Security', href: '#' },
+    { label: 'Status', href: '#' },
+    { label: 'Roadmap', href: '#' },
+  ],
+  Resources: [
+    { label: 'Blog', href: '#' },
+    { label: 'Guides', href: '#' },
+    { label: 'Changelog', href: '#' },
+    { label: 'Community', href: '#' },
+    { label: 'Support', href: '#' },
+    { label: 'Resources', href: '#' },
+  ],
+  Developers: [
+    { label: 'GitHub', href: '#' },
+    { label: 'Examples', href: '#' },
+    { label: 'SDKs', href: '#' },
+    { label: 'Integration', href: '#' },
+    { label: 'Webhooks', href: '#' },
+    { label: 'Architecture', href: '#' },
+  ],
+  Company: [
+    { label: 'About', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Careers', href: '#' },
+    { label: 'Press', href: '#' },
+    { label: 'Partners', href: '#' },
+    { label: 'Book a demo', href: '#' },
+  ],
+};
+
+export const features = [
+  { icon: '∞', label: 'Unlimited API Calls' },
+  { icon: '⚡', label: 'High Performance' },
+  { icon: '🔒', label: 'Enterprise Security' },
+  { icon: '💬', label: 'Priority Support' },
 ];

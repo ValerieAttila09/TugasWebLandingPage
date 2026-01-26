@@ -25,7 +25,7 @@ export function DottedMap({
   height = 75,
   mapSamples = 5000,
   markers = [],
-  markerColor = "#FF6900",
+  markerColor = "#CD87EF",
   dotRadius = 0.2,
   stagger = true,
   className,

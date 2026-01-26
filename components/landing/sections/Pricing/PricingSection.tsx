@@ -9,7 +9,7 @@ const PricingSection = () => {
   const [pricingSelection, setPricingSelection] = useState({ category: "" });
 
   return (
-    <div className='min-h-screen bg-linear-to-b from-black to-[#070609] border-y border-neutral-800 w-full p-6 sm:p-12 md:p-18 grid grid-cols-2 gap-6 sm:gap-16 md:gap-32'>
+    <div className='bg-linear-to-b from-black to-[#070609] border-y border-neutral-800 container-wrapper grid grid-cols-2 gap-6 sm:gap-16 md:gap-32'>
       <div className="col-span-1 space-y-52 pe-6">
         {PricingSectionData.pricingDescription.map((data) => {
           return (
