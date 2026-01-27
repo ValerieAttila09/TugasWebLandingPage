@@ -10,11 +10,14 @@ import HeroSection from "@/components/landing/sections/Hero/Hero";
 import IntegrationsSection from "@/components/landing/sections/Integrations/Integrations";
 import PricingSection from "@/components/landing/sections/Pricing/PricingSection";
 import ProjectsSection from "@/components/landing/sections/Projects/Projects";
+import ServicesSection from "@/components/landing/sections/Services/Services";
+import Sidebar from "@/components/landing/sidebar/Sidebar";
 
 const Page = () => {
 
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen overflow-x-hidden w-full">
+      <Sidebar />
       <HeroSection
         headline="We Craft Digital Experiences That Feel Intuitive, Modern & Alive"
         subHeadline="Xenora Studio is a digital agency specializing in web design, development, and motion-driven interfaces for forward-thinking brands."
@@ -24,6 +27,7 @@ const Page = () => {
       <IntegrationsSection />
       <AboutSection />
       <ProjectsSection />
+      <ServicesSection />
       <CodeSection />
       <FeaturesSection />
       <PricingSection />

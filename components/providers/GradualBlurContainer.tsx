@@ -11,7 +11,7 @@ interface GradualBlurContainerProps extends GradualBlurProps {
 }
 
 const GradualBlurContainer: React.FC<GradualBlurContainerProps> = ({
-  scrollThreshold = 30,
+  scrollThreshold = 10,
   ...gradualBlurProps
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,15 +33,15 @@ const GradualBlurContainer: React.FC<GradualBlurContainerProps> = ({
         gsap.to(containerRef.current, {
           opacity: 1,
           pointerEvents: 'auto',
-          duration: 0.8,
+          duration: 0.5,
           ease: 'power2.out',
         });
       } else {
         gsap.to(containerRef.current, {
           opacity: 0,
           pointerEvents: 'none',
-          duration: 0.8,
-          ease: 'power2.in',
+          duration: 0.5,
+          ease: 'power2.out',
         });
       }
     }

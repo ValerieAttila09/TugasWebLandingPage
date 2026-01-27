@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLayoutEffect, useRef, useState } from 'react';
+import { X } from 'lucide-react';
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -17,25 +18,82 @@ const Sidebar = () => {
   const [menuWidths, setMenuWidths] = useState<Record<string, number>>({});
   const { isOpen, toggleSidebar } = useSidebarStore();
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      if (isOpen) {
-        gsap.to(sidebarRef.current, {
-          x: 0,
-          duration: 0.5,
-          ease: 'power3.inOut',
-        });
-      } else {
-        gsap.to(sidebarRef.current, {
-          x: '-100%',
-          duration: 0.5,
-          ease: 'power3.inOut',
-        });
+      if (sidebarRef.current && overlayRef.current) {
+        if (isOpen) {
+          // Animate sidebar
+          gsap.to(sidebarRef.current, {
+            x: 0,
+            duration: 0.5,
+            ease: 'power3.inOut',
+          });
+          // Animate overlay
+          gsap.to(overlayRef.current, {
+            opacity: 1,
+            pointerEvents: 'auto',
+            duration: 0.5,
+            ease: 'power3.inOut',
+          });
+          // Disable body scroll
+          document.body.style.overflow = 'hidden';
+          document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
+        } else {
+          // Animate sidebar
+          gsap.to(sidebarRef.current, {
+            x: '-100%',
+            duration: 0.5,
+            ease: 'power3.inOut',
+          });
+          // Animate overlay
+          gsap.to(overlayRef.current, {
+            opacity: 0,
+            pointerEvents: 'none',
+            duration: 0.5,
+            ease: 'power3.inOut',
+          });
+          // Enable body scroll
+          document.body.style.overflow = 'auto';
+          document.body.style.paddingRight = '0px';
+        }
       }
     },
     { dependencies: [isOpen] }
   );
+
+  // Handle scroll lock to prevent scrolling when sidebar is open
+  useLayoutEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
+      
+      // Prevent scroll on touch devices
+      const preventScroll = (e: Event) => {
+        if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) {
+          e.preventDefault();
+        }
+      };
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+      
+      return () => {
+        document.removeEventListener('touchmove', preventScroll);
+        document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '0px';
+      };
+    }
+  }, [isOpen]);
+
+  // Initialize sidebar to be off-screen on load
+  useLayoutEffect(() => {
+    if (sidebarRef.current) {
+      gsap.set(sidebarRef.current, { x: '-100%' });
+    }
+    if (overlayRef.current) {
+      gsap.set(overlayRef.current, { opacity: 0, pointerEvents: 'none' });
+    }
+  }, []);
 
   useLayoutEffect(() => {
     const widths: Record<string, number> = {};
@@ -50,134 +108,83 @@ const Sidebar = () => {
 
   return (
     <>
+      {/* Overlay */}
+      <div
+        ref={overlayRef}
+        onClick={toggleSidebar}
+        className='fixed inset-0 bg-black/40 backdrop-blur-sm z-40 opacity-0 pointer-events-none lg:hidden'
+      />
+
+      {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className='absolute z-50 inset-y-0 left-0 sm:w-[720px] bg-black rounded-r-lg border border-neutral-400/35 -translate-x-full'
+        className='fixed top-0 left-0 bottom-0 z-50 lg:hidden bg-black border-r border-neutral-800 overflow-hidden w-full sm:w-1/2'
       >
-        <div className='w-full h-full relative flex justify-between overflow-hidden'>
-          <div className='w-full relative flex flex-col justify-between'>
-            <div className='w-full p-8 h-full flex items-start justify-start'>
-              <div className='w-1/4'>
-                <div className='flex items-center gap-2'>
-                  <div className='w-[5px] h-1 bg-white' />
-                  <p className='text-xs text-white'>DISCOVER</p>
-                </div>
-              </div>
-              <div className='w-full space-y-2'>
-                {landingPageSidebarMenu.map((data, i) => {
-                  const isActivePage =
-                    data.href == pathname ? 'bg-violet-500 text-black' : 'bg-black text-white';
-                  return (
+        <div className='w-full h-full relative flex flex-col justify-between'>
+          {/* Header */}
+          <div className='pt-20 px-6 sm:px-8 pb-8 border-b border-neutral-800'>
+            <div className='flex items-center gap-2 mb-6'>
+              <div className='w-[5px] h-1 bg-white' />
+              <p className='text-xs text-white font-semibold'>NAVIGATION</p>
+            </div>
+          </div>
+
+          {/* Menu Items */}
+          <div className='flex-1 overflow-y-auto px-6 sm:px-8 py-8'>
+            <div className='space-y-4'>
+              {landingPageSidebarMenu.map((data, i) => {
+                const isActivePage = data.href == pathname;
+                return (
+                  <Link
+                    key={data.label}
+                    href={data.href}
+                    onClick={toggleSidebar}
+                    className='block group'
+                  >
                     <div
-                      key={data.label}
-                      className='relative flex justify-start items-start gap-3 w-full'
+                      className={`px-4 py-3 rounded-lg transition-all duration-300 ${
+                        isActivePage
+                          ? 'bg-violet-500/20 border border-violet-500/50'
+                          : 'bg-neutral-900/50 border border-neutral-800 hover:border-violet-500/50'
+                      }`}
                     >
-                      <div className='relative w-auto'>
-                        <div
-                          style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            right: 0,
-                            width: 24,
-                            height: 24,
-                            scale: 1.2,
-                            background: '#000',
-                            clipPath: 'polygon(100% 100%, 0 100%, 100% 0)',
-                            zIndex: 2,
-                          }}
-                        />
-                        <div
-                          ref={(el) => {
-                            if (el) menuRefs.current[data.label] = el;
-                          }}
-                          onMouseEnter={() => setIsHovering({ isHovered: true, elementId: data.label })}
-                          onMouseLeave={() => setIsHovering({ isHovered: false, elementId: data.label })}
-                        >
-                          <DecryptedText
-                            style={{ width: `${menuWidths[data.label] + 8}px` || 'auto' }}
-                            parentClassName={`${isActivePage} cursor-pointer rounded font-bold hover:bg-white hover:text-black ps-2 pe-6 block`}
-                            className='text-[4.2rem]/20'
-                            encryptedClassName='text-[4.2rem]/20'
-                            speed={50}
-                            maxIterations={25}
-                            text={data.label}
-                            animateOn='hover'
-                            revealDirection='start'
-                            sequential
-                            useOriginalCharsOnly={false}
-                          />
-                        </div>
+                      <div className='flex items-center justify-between'>
+                        <h3 className={`text-sm sm:text-base font-semibold ${
+                          isActivePage ? 'text-violet-400' : 'text-neutral-200 group-hover:text-white'
+                        }`}>
+                          {data.label}
+                        </h3>
+                        {isActivePage && (
+                          <div className='w-2 h-2 rounded-full bg-violet-500' />
+                        )}
                       </div>
-                      {pathname == data.href ? (
-                        <DecryptedText
-                          text={`PAGE.00${i + 1}`}
-                          sequential
-                          useOriginalCharsOnly={false}
-                          speed={50}
-                          maxIterations={25}
-                          revealDirection='start'
-                          className={'text-xs text-violet-500 font-regular'}
-                          encryptedClassName='text-xs'
-                          animateOnParent={true}
-                        />
-                      ) : isHovering.isHovered && isHovering.elementId === data.label ? (
-                        <DecryptedText
-                          text={`PAGE.00${i + 1}`}
-                          sequential
-                          useOriginalCharsOnly={false}
-                          speed={50}
-                          maxIterations={25}
-                          revealDirection='start'
-                          parentClassName={`${isActivePage}`}
-                          className='text-xs'
-                          encryptedClassName='text-xs'
-                          animateOnParent={true}
-                        />
-                      ) : null}
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className='w-full p-8 border-t border-neutral-700 flex items-start justify-start'>
-              <div className='w-1/4 py-0.5'>
-                <div className='flex items-center gap-2'>
-                  <div className='w-[5px] h-1 bg-white' />
-                  <p className='text-sm text-white'>DISCOVER</p>
-                </div>
-              </div>
-              <div className='w-full'>
-                <Link href={'/#'}>
-                  <p className='text-white text-lg'>TEST LINK</p>
-                </Link>
-                <Link href={'/#'}>
-                  <p className='text-white text-lg'>TEST LINK</p>
-                </Link>
-              </div>
-            </div>
-            <div className='w-auto p-8 border-t border-neutral-700 flex items-center justify-start'>
-              <div className='w-1/4'>
-                <div className='flex items-center gap-2'>
-                  <div className='w-[5px] h-1 bg-white' />
-                  <p className='text-sm text-white'>DISCOVER</p>
-                </div>
-              </div>
-              <div className='w-full space-y-2'>
-                <span className='text-neutral-600 text-lg'>&copy; 2026</span>
-              </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
-          <div className='w-18 border-l border-neutral-700 flex flex-col justify-between'>
-            <Button
-              onClick={toggleSidebar}
-              aria-label='Close button'
-              className='w-full rounded-tr-lg h-[49px] relative flex items-center justify-center border-b border-neutral-700 bg-black group transition-all'
-            >
-              <div className='absolute w-6 h-px bg-white rotate-45' />
-              <div className='absolute w-6 h-px bg-white -rotate-45' />
-            </Button>
-            <div className='w-full h-full'></div>
+
+          {/* Footer */}
+          <div className='px-6 sm:px-8 py-8 border-t border-neutral-800'>
+            <div className='flex items-center gap-2 mb-4'>
+              <div className='w-[5px] h-1 bg-white' />
+              <p className='text-xs text-white font-semibold'>QUICK LINKS</p>
+            </div>
+            <div className='space-y-3'>
+              <Link href={'/#'} className='block text-sm text-neutral-400 hover:text-white transition-colors'>
+                Documentation
+              </Link>
+              <Link href={'/#'} className='block text-sm text-neutral-400 hover:text-white transition-colors'>
+                Contact Support
+              </Link>
+              <Link href={'/#'} className='block text-sm text-neutral-400 hover:text-white transition-colors'>
+                &copy; 2026 XENORA
+              </Link>
+            </div>
           </div>
+
+          <div/>
         </div>
       </div>
     </>

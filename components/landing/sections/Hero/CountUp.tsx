@@ -5,15 +5,15 @@ import React from 'react'
 const CountUpSection = () => {
   return (
     <div className="absolute z-5 bottom-0 right-0 h-25">
-      <div className="w-2xl h-full flex justify-end items-end">
-        <div style={{
+      <div className="max-w-2xl h-full flex justify-center sm:justify-end items-end">
+        <div className='hidden sm:block' style={{
           width: '100px',
           height: "100px",
           transform: "translateX(1px)",
           background: '#000',
           clipPath: 'polygon(100% 100%, 0 100%, 100% 0)',
         }} />
-        <div className="w-full h-[calc(100%-0.5px)] bg-black flex items-center justify-center gap-10">
+        <div className="w-screen h-[calc(100%-0.5px)] bg-black flex items-center justify-center gap-10">
           {CountOnData.map((data) => {
             return (
               <div key={data.label} className="flex flex-col justify-center items-center gap-2">

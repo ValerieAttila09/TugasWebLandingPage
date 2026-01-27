@@ -10,9 +10,9 @@ export const landingPageNavMenu: LandingPageNavMenu[] = [
 
 export const landingPageSidebarMenu: LandingPageSidebarMenu[] = [
   { label: "HOME", href: "/" },
-  { label: "BLOG", href: "/blog" },
-  { label: "MEDIA", href: "/media" },
-  { label: "SUPPORT", href: "/support" },
+  { label: "ABOUT US", href: "/#about" },
+  { label: "DOCS", href: "/#docs" },
+  { label: "SERVICES", href: "/#services" },
 ];
 
 export const IntegrationLogo: IntegrationLogo[] = [

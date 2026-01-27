@@ -35,7 +35,7 @@ export default function RootLayout({
           <GradualBlurContainer
             target="page"
             position="bottom"
-            height="7rem"
+            height="5rem"
             strength={2}
             divCount={5}
             curve="bezier"
