@@ -65,7 +65,7 @@ const HeroSection = ({ headline, subHeadline, primaryCTA, secondaryCTA }: HeroSe
           </motion.h3>
         </motion.div>
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3"
+          className="flex sm:flex-row items-center justify-center gap-3"
           variants={{
             hidden: { opacity: 0 },
             visible: {

@@ -52,9 +52,9 @@ const Navbar = () => {
   }, { dependencies: [isScrolled] });
 
   return (
-    <div ref={navRef} className='fixed bg-neutral-950/25 backdrop-blur-xs z-50 top-0 right-0 left-0 border-b border-neutral-600/35'>
+    <div ref={navRef} className='fixed bg-neutral-950/25 backdrop-blur-xs z-100 top-0 right-0 left-0 border-b border-neutral-600/35'>
 
-      <nav className='w-full px-4 sm:px-8 flex items-center justify-between py-2'>
+      <nav className='w-full px-4 sm:px-8 flex items-center justify-between py-1.5'>
         {/* Logo Section */}
         <div className='flex items-center gap-6 sm:gap-12'>
           {currentPath === "/" ? (

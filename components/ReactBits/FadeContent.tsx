@@ -5,6 +5,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FadeContentProps } from '@/types/interfaces';
+import { useSidebarStore } from "@/lib/store/use-sidebar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ const FadeContent: React.FC<FadeContentProps> = ({
   className = '',
   ...props
 }) => {
+  const isSidebarOpen = useSidebarStore();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -87,7 +89,7 @@ const FadeContent: React.FC<FadeContentProps> = ({
   }, [container, blur, duration, easing, delay, threshold, initialOpacity, disappearAfter, disappearDuration, disappearEase, onComplete, onDisappearanceComplete]);
 
   return (
-    <div ref={ref} className={className} {...props}>
+    <div ref={ref} className={`${className} ${isSidebarOpen ? "overflow-hidden" : ""} `} {...props}>
       {children}
     </div>
   );

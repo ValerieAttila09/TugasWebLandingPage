@@ -24,37 +24,31 @@ const Sidebar = () => {
     () => {
       if (sidebarRef.current && overlayRef.current) {
         if (isOpen) {
-          // Animate sidebar
           gsap.to(sidebarRef.current, {
             x: 0,
             duration: 0.5,
             ease: 'power3.inOut',
           });
-          // Animate overlay
           gsap.to(overlayRef.current, {
             opacity: 1,
             pointerEvents: 'auto',
             duration: 0.5,
             ease: 'power3.inOut',
           });
-          // Disable body scroll
           document.body.style.overflow = 'hidden';
           document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
         } else {
-          // Animate sidebar
           gsap.to(sidebarRef.current, {
             x: '-100%',
             duration: 0.5,
             ease: 'power3.inOut',
           });
-          // Animate overlay
           gsap.to(overlayRef.current, {
             opacity: 0,
             pointerEvents: 'none',
             duration: 0.5,
             ease: 'power3.inOut',
           });
-          // Enable body scroll
           document.body.style.overflow = 'auto';
           document.body.style.paddingRight = '0px';
         }
@@ -63,13 +57,11 @@ const Sidebar = () => {
     { dependencies: [isOpen] }
   );
 
-  // Handle scroll lock to prevent scrolling when sidebar is open
   useLayoutEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
       
-      // Prevent scroll on touch devices
       const preventScroll = (e: Event) => {
         if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) {
           e.preventDefault();
@@ -85,7 +77,6 @@ const Sidebar = () => {
     }
   }, [isOpen]);
 
-  // Initialize sidebar to be off-screen on load
   useLayoutEffect(() => {
     if (sidebarRef.current) {
       gsap.set(sidebarRef.current, { x: '-100%' });
@@ -108,20 +99,17 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Overlay */}
       <div
         ref={overlayRef}
         onClick={toggleSidebar}
         className='fixed inset-0 bg-black/40 backdrop-blur-sm z-40 opacity-0 pointer-events-none lg:hidden'
       />
 
-      {/* Sidebar */}
       <div
         ref={sidebarRef}
         className='fixed top-0 left-0 bottom-0 z-50 lg:hidden bg-black border-r border-neutral-800 overflow-hidden w-full sm:w-1/2'
       >
         <div className='w-full h-full relative flex flex-col justify-between'>
-          {/* Header */}
           <div className='pt-20 px-6 sm:px-8 pb-8 border-b border-neutral-800'>
             <div className='flex items-center gap-2 mb-6'>
               <div className='w-[5px] h-1 bg-white' />
@@ -129,7 +117,6 @@ const Sidebar = () => {
             </div>
           </div>
 
-          {/* Menu Items */}
           <div className='flex-1 overflow-y-auto px-6 sm:px-8 py-8'>
             <div className='space-y-4'>
               {landingPageSidebarMenu.map((data, i) => {
@@ -165,8 +152,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className='px-6 sm:px-8 py-8 border-t border-neutral-800'>
+          <div className='px-6 sm:px-8 pt-8 pb-16 border-t border-neutral-800'>
             <div className='flex items-center gap-2 mb-4'>
               <div className='w-[5px] h-1 bg-white' />
               <p className='text-xs text-white font-semibold'>QUICK LINKS</p>

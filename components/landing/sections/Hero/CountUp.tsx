@@ -4,8 +4,8 @@ import React from 'react'
 
 const CountUpSection = () => {
   return (
-    <div className="absolute z-5 bottom-0 right-0 h-25">
-      <div className="max-w-2xl h-full flex justify-center sm:justify-end items-end">
+    <div className="absolute z-5 bottom-0 inset-x-0 h-25">
+      <div className="max-w-2xl mx-auto h-full flex justify-center sm:justify-center items-center">
         <div className='hidden sm:block' style={{
           width: '100px',
           height: "100px",
@@ -33,13 +33,13 @@ const CountUpSection = () => {
             );
           })}
         </div>
-        {/* <div style={{
+        <div className='hidden sm:block' style={{
           width: '100px',
           height: "100px",
           transform: "translateX(-1px)",
           background: '#000',
           clipPath: 'polygon(0 100%, 0 0, 100% 100%)',
-        }} /> */}
+        }} />
       </div>
     </div>
   );

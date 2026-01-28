@@ -1,5 +1,6 @@
 import { Globe, Code, Zap } from 'lucide-react';
 import { GradualBlurProps } from "@/components/ReactBits/GradualBlur";
+import { boltIcon, boxIcon, chartIcon, globeIcon, linkIcon, lockIcon } from "@/assets/icons/HeroIcons";
 
 export const landingPageNavMenu: LandingPageNavMenu[] = [
   { label: "HOME", href: "/" },
@@ -579,4 +580,54 @@ export const features = [
   { icon: '⚡', label: 'High Performance' },
   { icon: '🔒', label: 'Enterprise Security' },
   { icon: '💬', label: 'Priority Support' },
+];
+
+export 
+const ServicesData = [
+  {
+    id: 1,
+    title: 'Real-time Database',
+    description: 'Lightning-fast, real-time synchronization with automatic conflict resolution and offline support.',
+    icon: boltIcon,
+  },
+  {
+    id: 2,
+    title: 'Authentication',
+    description: 'Secure authentication with multiple providers - OAuth, JWT, and biometric support out of the box.',
+    icon: lockIcon,
+  },
+  {
+    id: 3,
+    title: 'File Storage',
+    description: 'Unlimited file storage with automatic optimization, CDN integration, and version control.',
+    icon: boxIcon,
+  },
+  {
+    id: 4,
+    title: 'API Gateway',
+    description: 'Built-in API gateway with rate limiting, caching, and automatic documentation generation.',
+    icon: globeIcon,
+  },
+  {
+    id: 5,
+    title: 'Webhooks',
+    description: 'Event-driven architecture with reliable webhook delivery and automatic retry mechanisms.',
+    icon: linkIcon,
+  },
+  {
+    id: 6,
+    title: 'Analytics',
+    description: 'Real-time analytics dashboard with custom metrics, insights, and performance monitoring.',
+    icon: chartIcon,
+  },
+];
+
+export const LOG_MESSAGES = [
+  'Initializing core modules...',
+  'Scanning system environment...',
+  'Loading runtime dependencies...',
+  'Establishing secure connection...',
+  'Syncing distributed nodes...',
+  'Optimizing performance layers...',
+  'Finalizing boot sequence...'
 ];

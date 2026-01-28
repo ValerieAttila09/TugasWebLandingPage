@@ -6,6 +6,7 @@ import Sidebar from "@/components/landing/sidebar/Sidebar";
 import GradualBlurContainer from "@/components/providers/GradualBlurContainer";
 import FadeContent from "@/components/ReactBits/FadeContent";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import LoadingScreen from "@/components/landing/loadingScreen/LoadingScreen";
 
 const bricolagueFont = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -21,14 +22,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body className={`${bricolagueFont.className} antialiased bg-black`}>
+      <body className={`${bricolagueFont.className} relative antialiased bg-black`}>
+        <LoadingScreen />
         <SmoothScrollProvider>
-          <main className="relative min-h-screen bg-black font-normal">
+          <main className={`relative min-h-screen bg-black font-normal`}>
             <Navbar />
-            <FadeContent blur={true} className="bg-black" duration={1000} delay={500} easing="power2.out" initialOpacity={0}>
-              <Sidebar />
+            <Sidebar />
+            <FadeContent blur={true} className="bg-black" duration={1000} delay={7600} easing="power2.out" initialOpacity={0}>
               {children}
             </FadeContent>
           </main>

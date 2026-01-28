@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const IntegrationsSection = () => {
   return (
-    <div className="w-full py-20 space-y-8">
+    <div className="w-full py-20 sm:py-40 space-y-8">
       <div className="space-y-4 mx-auto w-full max-w-3xl">
         <h1 className="text-center text-5xl text-white font-semibold">Integrate Your Favourite Apps</h1>
         <p className="text-center text-md text-neutral-300 font-thin">Enhance your workflow by connecting the tools you use daily. Our seamless integrations help you automate tasks and keep everything in sync.</p>
