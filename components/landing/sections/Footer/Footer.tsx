@@ -18,10 +18,10 @@ const FooterSection = () => {
               Start building with Xenora Platform today. Get everything you need to integrate real-time functionality into your applications.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button className='bg-white text-black hover:bg-neutral-100 rounded-lg px-6 py-2 font-semibold'>
+              <Button className='bg-white text-black hover:bg-neutral-100 rounded-sm px-6 py-2 font-semibold'>
                 Start Building
               </Button>
-              <Button variant='outline' className='border-neutral-700 hover:bg-neutral-900 text-neutral-800 hover:text-white rounded-lg px-6 py-2'>
+              <Button variant='ghost' className='border border-neutral-700 hover:bg-neutral-900 text-neutral-300 hover:text-white rounded-sm px-6 py-2'>
                 View Pricing
               </Button>
             </div>
@@ -34,8 +34,8 @@ const FooterSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-white font-semibold mb-4 text-sm">{category}</h3>
-              <ul className='space-y-3'>
+              <h3 className="text-white font-semibold mb-4 text-md">{category}</h3>
+              <ul className='space-y-2 sm:space-y-3'>
                 {links.map((link, idx) => (
                   <li key={idx}>
                     <Link
@@ -78,13 +78,13 @@ const FooterSection = () => {
             <div className="flex gap-3">
               <Link
                 href='#'
-                className='p-2 rounded-lg bg-neutral-900 border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-800 transition-all duration-200 text-neutral-400 hover:text-white'
+                className='p-2 rounded-sm bg-neutral-900 border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-800 transition-all duration-200 text-neutral-400 hover:text-white'
               >
                 <Github size={18} />
               </Link>
               <Link
                 href='#'
-                className='p-2 rounded-lg bg-neutral-900 border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-800 transition-all duration-200 text-neutral-400 hover:text-white'
+                className='p-2 rounded-sm bg-neutral-900 border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-800 transition-all duration-200 text-neutral-400 hover:text-white'
               >
                 <Linkedin size={18} />
               </Link>

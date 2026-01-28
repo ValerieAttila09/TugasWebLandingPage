@@ -16,7 +16,7 @@ const PricingSection = () => {
   return (
     <motion.div
       ref={ref}
-      className='w-full bg-linear-to-b from-black to-[#070609] border-y border-neutral-800 px-4 sm:px-6 md:px-12 py-12 md:py-24'
+      className='w-full bg-linear-to-b from-black to-[#070609] border-y border-neutral-800 px-6 sm:px-8 md:px-12 py-12 md:py-24'
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={staggerContainerVariants}
@@ -80,7 +80,7 @@ const PricingSection = () => {
             >
               <div className="w-full flex items-center justify-between">
                 <div className="">
-                  <h1 className="text-xl sm:text-2xl text-white font-bold">{data.title}</h1>
+                  <h1 className="text-lg sm:text-2xl text-white font-bold">{data.title}</h1>
                   <p className="text-sm text-neutral-400 font-normal mt-1">{data.subtitle}</p>
                 </div>
                 <span className="flex items-center gap-0.5">
@@ -89,7 +89,7 @@ const PricingSection = () => {
                 </span>
               </div>
               <Separator className='my-6 bg-neutral-700' />
-              <div className="w-full grid grid-cols-2 gap-2">
+              <div className="w-full grid sm:not-first:grid-cols-2 gap-2">
                 {data.guaranteedServices.map((guaranteedServicesData, i) => (
                   <motion.span
                     key={guaranteedServicesData}
@@ -119,13 +119,13 @@ const PricingSection = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-5 text-green-600">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                       </svg>
-                      <span className="text-md text-neutral-300 font-thin text-wrap">{benefitsData}</span>
+                      <span className="text-sm sm:text-md text-neutral-300 font-thin text-wrap">{benefitsData}</span>
                     </motion.div>
                   );
                 })}
               </div>
               <div className="mt-10">
-                <Button variant={'default'} className='w-full rounded-sm border border-neutral-800 bg-neutral-950 hover:bg-neutral-900 hover:border-neutral-700'>Get Started</Button>
+                <Button variant={'default'} className={`w-full rounded-sm border ${isActiveSelection ? "border-neutral-800 bg-neutral-100 text-neutral-800 hover:bg-white hover:border-neutral-400" : "border-neutral-800 bg-neutral-950 hover:bg-neutral-900 hover:border-neutral-700"}`}>Get Started</Button>
               </div>
               {isActiveSelection && (
                 <motion.div

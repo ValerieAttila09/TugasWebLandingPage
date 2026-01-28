@@ -26,7 +26,7 @@ const CountUpSection = () => {
                     duration={1}
                     className="count-up-text text-3xl font-medium text-white"
                   />
-                  <h1 className="text-3xl text-neutral-100 font-medium">{data.symbol}</h1>
+                  <h1 className="text-xl sm:text-3xl text-neutral-100 font-medium">{data.symbol}</h1>
                 </div>
                 <span className="text-sm text-neutral-400">{data.label}</span>
               </div>

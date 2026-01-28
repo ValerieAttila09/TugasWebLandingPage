@@ -21,12 +21,11 @@ const FeaturesSection = () => {
   return (
     <motion.div
       ref={ref}
-      className='w-full px-4 sm:px-6 md:px-12 py-12 md:py-24'
+      className='w-full px-6 sm:px-8 md:px-12 py-12 md:py-24'
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={staggerContainerVariants}
     >
-      {/* Header Section */}
       <motion.div className="max-w-7xl mx-auto mb-12 md:mb-20" variants={{
         hidden: { opacity: 0 },
         visible: {
@@ -79,7 +78,7 @@ const FeaturesSection = () => {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           {/* Left Column - Main Features */}
-          <motion.div className="flex flex-col justify-between space-y-6 sm:space-y-8" variants={{
+          <motion.div className="flex flex-col justify-between items-center space-y-6 sm:space-y-8" variants={{
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
@@ -118,14 +117,14 @@ const FeaturesSection = () => {
           >
             {featureKeywords.map((feature, rowIndex) => (
               <motion.div key={rowIndex} className="space-y-3 p-6 rounded-xl border border-neutral-800 hover:border-violet-900 bg-neutral-900/50 hover:bg-violet-950/20 transition-all duration-300" variants={slideInFromRightVariants}>
-                <h4 className="text-xs sm:text-sm font-semibold text-white mb-4">{feature.main}</h4>
+                <h4 className="text-md sm:text-lg font-semibold text-white mb-4">{feature.main}</h4>
                 <div className="space-y-2">
                   {feature.items.map((item, idx) => (
-                    <motion.div key={idx} className="flex items-start gap-3" variants={staggerItemVariants}>
+                    <motion.div key={idx} className="flex items-center sm:items-start gap-3" variants={staggerItemVariants}>
                       <div className="size-5 rounded-full bg-neutral-950 border border-green-900 flex items-center justify-center shrink-0 mt-1">
                         <Check size={10} className="text-green-700" strokeWidth={3} />
                       </div>
-                      <span className="text-neutral-300 text-xs sm:text-sm leading-relaxed">
+                      <span className="text-neutral-300 text-sm sm:text-md leading-relaxed">
                         {item}
                       </span>
                     </motion.div>

@@ -13,7 +13,7 @@ const CTA_Section = () => {
   return (
     <motion.div
       ref={ref}
-      className='w-full bg-linear-to-t from-[#120912] via-[#070509] to-black px-4 sm:px-6 md:px-12 py-12 md:py-24'
+      className='w-full bg-linear-to-t from-[#120912] via-[#070509] to-black px-6 sm:px-8 md:px-12 py-12 md:py-24'
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={staggerContainerVariants}

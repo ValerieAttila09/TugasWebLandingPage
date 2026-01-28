@@ -12,7 +12,7 @@ const ServicesSection = () => {
   return (
     <motion.section
       ref={ref}
-      className='w-full px-4 sm:px-6 md:px-12 py-12 md:py-24'
+      className='w-full px-6 sm:px-8 md:px-12 py-12 md:py-24'
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={staggerContainerVariants}
