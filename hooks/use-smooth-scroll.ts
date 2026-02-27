@@ -29,7 +29,7 @@ const useSmoothScroll = () => {
 
       // Animation loop menggunakan GSAP ticker
       const ticker = gsap.ticker.add(() => {
-        let clampedY = clamp(proxy.y);
+        const clampedY = clamp(proxy.y);
         smooth = gsap.utils.interpolate(smooth, clampedY, 0.1);
 
         if (Math.abs(smooth - window.scrollY) > 0.5) {

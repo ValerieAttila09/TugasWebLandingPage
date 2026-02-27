@@ -1,9 +1,11 @@
-import React from 'react'
 
-const Docs = () => {
+import React from 'react';
+import DocsContent from '@/components/docs/DocsContent';
+
+const DocsPage = () => {
   return (
-    <div>Docs</div>
-  )
-}
+    <DocsContent />
+  );
+};
 
-export default Docs
+export default DocsPage;

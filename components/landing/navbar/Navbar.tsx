@@ -13,23 +13,32 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   const currentPath = usePathname();
+  const isHomePage = currentPath === '/'; // Cek apakah ini halaman utama
   const [isScrolled, setIsScrolled] = useState(false);
   const { isOpen, toggleSidebar } = useSidebarStore();
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
-    };
+    // Hanya tambahkan scroll listener jika di halaman utama
+    if (isHomePage) {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        setIsScrolled(scrollPosition > 50);
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      window.addEventListener('scroll', handleScroll);
+      // Jalankan sekali saat mount untuk memeriksa posisi scroll awal
+      handleScroll();
+
+      // Hapus listener saat komponen unmount
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isHomePage]); // Efek ini bergantung pada isHomePage
 
   useGSAP(() => {
     if (navRef.current) {
-      if (isScrolled) {
+      // Buat navbar solid jika di-scroll ATAU jika bukan di halaman utama
+      if (isScrolled || !isHomePage) {
         gsap.to(navRef.current, {
           backgroundColor: 'rgba(29, 29, 29, 0.4)',
           borderBottomWidth: '1px',
@@ -39,6 +48,7 @@ const Navbar = () => {
           ease: 'power2.out',
         });
       } else {
+        // Buat navbar transparan jika di halaman utama dan di paling atas
         gsap.to(navRef.current, {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           borderBottomWidth: '0px',
@@ -49,7 +59,7 @@ const Navbar = () => {
         });
       }
     }
-  }, { dependencies: [isScrolled] });
+  }, { dependencies: [isScrolled, isHomePage] }); // Tambahkan isHomePage sebagai dependensi
 
   return (
     <div ref={navRef} className='fixed bg-neutral-950/25 backdrop-blur-xs z-100 top-0 right-0 left-0 border-b border-neutral-600/35'>
