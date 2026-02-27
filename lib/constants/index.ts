@@ -6,15 +6,15 @@ import { BookIcon, ComponentIcon, TemplateIcon, UIKitIcon, PlaygroundIcon, Cours
 export const landingPageNavMenu: LandingPageNavMenu[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/#about" },
-  { label: "DOCS", href: "/docs" },
   { label: "SERVICES", href: "/services" },
+  { label: "DOCS", href: "/docs" },
 ];
 
 export const landingPageSidebarMenu: LandingPageSidebarMenu[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/#about" },
-  { label: "DOCS", href: "/docs" },
   { label: "SERVICES", href: "/services" },
+  { label: "DOCS", href: "/docs" },
 ];
 
 export const IntegrationLogo: IntegrationLogo[] = [
