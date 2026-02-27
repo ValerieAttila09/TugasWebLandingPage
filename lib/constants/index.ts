@@ -631,3 +631,10 @@ export const LOG_MESSAGES = [
   'Optimizing performance layers...',
   'Finalizing boot sequence...'
 ];
+
+export const featureKeywords = [
+  { main: 'Backend as a Service', items: ['Deploy APIs', 'Authentication', 'Data Management', 'Zero Overhead'] },
+  { main: 'Real-time Database', items: ['Data Sync', 'Collaborative Apps', 'Live Dashboards', 'Responsive UX'] },
+  { main: 'Orchestration & Automation', items: ['Workflows', 'Task Scheduling', 'Service Integration', 'Orchestration Tools'] },
+  { main: 'Developer-Friendly APIs', items: ['REST APIs', 'WebSocket APIs', 'Multiple SDKs', 'Code Examples'] },
+];

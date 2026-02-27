@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FeaturesSectionData } from '@/lib/constants';
+import { FeaturesSectionData, featureKeywords } from '@/lib/constants';
 import { ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
@@ -10,13 +10,6 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const FeaturesSection = () => {
   const { ref, isInView } = useScrollAnimation({ threshold: 0.2 });
-  // Extract unique keywords from descriptions for sub-items
-  const featureKeywords = [
-    { main: 'Backend as a Service', items: ['Deploy APIs', 'Authentication', 'Data Management', 'Zero Overhead'] },
-    { main: 'Real-time Database', items: ['Data Sync', 'Collaborative Apps', 'Live Dashboards', 'Responsive UX'] },
-    { main: 'Orchestration & Automation', items: ['Workflows', 'Task Scheduling', 'Service Integration', 'Orchestration Tools'] },
-    { main: 'Developer-Friendly APIs', items: ['REST APIs', 'WebSocket APIs', 'Multiple SDKs', 'Code Examples'] },
-  ];
 
   return (
     <motion.div
@@ -102,7 +95,6 @@ const FeaturesSection = () => {
             ))}
           </motion.div>
 
-          {/* Right Column - Feature Items */}
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" variants={{
             hidden: { opacity: 0 },
             visible: {
