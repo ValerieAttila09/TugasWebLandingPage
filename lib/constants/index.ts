@@ -5,15 +5,15 @@ import { boltIcon, boxIcon, chartIcon, globeIcon, linkIcon, lockIcon } from "@/a
 export const landingPageNavMenu: LandingPageNavMenu[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/#about" },
-  { label: "DOCS", href: "/#docs" },
-  { label: "SERVICES", href: "/#services" },
+  { label: "DOCS", href: "/docs" },
+  { label: "SERVICES", href: "/services" },
 ];
 
 export const landingPageSidebarMenu: LandingPageSidebarMenu[] = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/#about" },
-  { label: "DOCS", href: "/#docs" },
-  { label: "SERVICES", href: "/#services" },
+  { label: "DOCS", href: "/docs" },
+  { label: "SERVICES", href: "/services" },
 ];
 
 export const IntegrationLogo: IntegrationLogo[] = [
