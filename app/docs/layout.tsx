@@ -46,7 +46,7 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
         <div ref={headerRef}>
           <DocsHeader onMenuClick={() => setSidebarOpen(!isSidebarOpen)} />
         </div>
-        <main className="flex-1 p-4 md:p-8 overflow-y-auto">
+        <main className="flex-1 p-4 md:p-8 overflow-y-scroll">
           {children}
         </main>
       </div>

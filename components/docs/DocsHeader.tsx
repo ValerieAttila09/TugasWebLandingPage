@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ChevronRightIcon from './icons/ChevronRightIcon';
 
@@ -15,9 +14,9 @@ const DocsHeader: React.FC<DocsHeaderProps> = ({ onMenuClick }) => {
         </svg>
       </button>
       <div className="flex items-center ml-4 text-sm">
-        <span>Getting started</span>
+        <span>Getting Started</span>
         <ChevronRightIcon />
-        <span className="font-semibold">Editor setup</span>
+        <span className="font-semibold">Your First Project</span>
       </div>
     </header>
   );

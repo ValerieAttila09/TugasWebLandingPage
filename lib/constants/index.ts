@@ -1,6 +1,7 @@
 import { Globe, Code, Zap } from 'lucide-react';
 import { GradualBlurProps } from "@/components/ReactBits/GradualBlur";
 import { boltIcon, boxIcon, chartIcon, globeIcon, linkIcon, lockIcon } from "@/assets/icons/HeroIcons";
+import { BookIcon, ComponentIcon, TemplateIcon, UIKitIcon, PlaygroundIcon, CourseIcon, CommunityIcon } from '@/components/docs/DocsIcons';
 
 export const landingPageNavMenu: LandingPageNavMenu[] = [
   { label: "HOME", href: "/" },
@@ -638,3 +639,79 @@ export const featureKeywords = [
   { main: 'Orchestration & Automation', items: ['Workflows', 'Task Scheduling', 'Service Integration', 'Orchestration Tools'] },
   { main: 'Developer-Friendly APIs', items: ['REST APIs', 'WebSocket APIs', 'Multiple SDKs', 'Code Examples'] },
 ];
+
+// --- Docs Page Content ---
+
+export const docsSidebarMenuItems = [
+    { name: 'Introduction', icon: BookIcon },
+    { name: 'Getting Started', icon: TemplateIcon },
+    { name: 'Core Concepts', icon: ComponentIcon, new: true },
+    { name: 'API Reference', icon: Code },
+    { name: 'SDKs', icon: PlaygroundIcon },
+    { name: 'Guides', icon: CourseIcon },
+    { name: 'Community', icon: CommunityIcon },
+];
+
+export const docsGettingStartedItems = ['Your First Project', 'API Keys', 'Using the SDKs', 'Understanding Limits'];
+
+export const docsCoreConceptsItems = [
+    'Real-time Database',
+    'Authentication',
+    'File Storage',
+    'API Gateway',
+    'Webhooks',
+    'Automation',
+];
+
+export const docsContent = {
+  subtitle: "GETTING STARTED",
+  title: "Your First Xenora Project",
+  description: "Welcome to Xenora! This guide will walk you through creating your first project, obtaining your API keys, and making your first API call to our platform.",
+  sections: [
+    {
+      title: "1. Create Your Xenora Account",
+      paragraphs: [
+        "Before you can create a project, you need a Xenora account. If you haven't already, <a href='/sign-up' class='text-fuchsia-400'>sign up for a free account</a>. The Starter plan is free and includes everything you need to get started.",
+        "Once you've signed up and verified your email, you'll be redirected to your personal dashboard.",
+      ]
+    },
+    {
+      title: "2. Create a New Project",
+      paragraphs: [
+        "Your Xenora dashboard is where you manage all your projects. To create your first one, click the 'New Project' button.",
+        "Give your project a name that reflects what you're building, for example, 'My Awesome App'. After creating the project, you will be taken to the project's main dashboard, where you'll find your API keys and service configurations."
+      ]
+    },
+    {
+        title: "3. Find Your API Keys",
+        paragraphs: [
+          "Your API keys are essential for interacting with the Xenora API. You can find them in your project's 'Settings' tab under the 'API Keys' section.",
+          "You will have two keys: a <code class='text-fuchsia-400'>public</code> key and a <code class='text-fuchsia-400'>secret</code> key. The public key is safe to use in client-side code (like a web browser or mobile app), while the secret key should only be used on a secure server and never exposed to the public.",
+          "Treat your secret key like a password. If it's ever compromised, you should regenerate it immediately from your dashboard."
+        ]
+    },
+    {
+        title: "4. Next Steps: Making Your First API Call",
+        paragraphs: [
+            "Now that you have your API keys, you're ready to start building. The easiest way to interact with Xenora is by using one of our official SDKs. Head over to the <a href='#' class='text-fuchsia-400'>SDKs</a> section to find installation instructions for your preferred language.",
+            "Here is a quick example of how to check the service status using cURL:",
+            `<pre><code class='language-bash'>curl -X GET 'https://api.xenora.studio/v1/status' \\n  -H 'Authorization: Bearer YOUR_PUBLIC_API_KEY'</code></pre>`,
+            "Congratulations! You've successfully set up your first Xenora project and are ready to integrate powerful backend services into your application."
+        ]
+    }
+  ]
+};
+
+export const docsTableOfContentsItems = [
+    { title: 'Create Your Account', active: true },
+    { title: 'Create a New Project', active: false },
+    { title: 'Find Your API Keys', active: false },
+    { title: 'Next Steps', active: false },
+];
+
+export const docsTableOfContentsCard = {
+  title: "Ready to Build Faster?",
+  description: "Explore our comprehensive guides and examples to accelerate your backend development.",
+  quote: `\"Xenora's BaaS completely changed our development workflow for the better.\"`,
+  author: "- CEO, FutureTech"
+};
