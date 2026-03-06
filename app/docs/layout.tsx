@@ -33,12 +33,16 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   }, [isSidebarOpen]); // Only re-run the effect if isSidebarOpen changes
 
   return (
-    <div className="flex h-screen bg-black text-white">
+    // Use min-h-screen rather than h-screen so the container can grow and let the
+    // window itself scroll.  With `h-screen` the root div is locked to the
+    // viewport height and we were only scrolling the inner <main>, but our
+    // SmoothScrollProvider listens on `window` and therefore never saw any
+    // scrollable area. The result was a static docs page.
+    <div className="flex min-h-screen bg-black text-white">
       <div
         ref={sidebarRef}
-        className={`fixed bottom-0 top-[60px] left-0 z-30 w-64 bg-neutral-950 border-r border-neutral-700 transform lg:translate-x-0 transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed bottom-0 top-[60px] left-0 z-30 w-64 bg-neutral-950 border-r border-neutral-700 transform lg:translate-x-0 transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <DocsSidebar />
       </div>
@@ -46,7 +50,7 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
         <div ref={headerRef}>
           <DocsHeader onMenuClick={() => setSidebarOpen(!isSidebarOpen)} />
         </div>
-        <main className="flex-1 p-4 md:p-8 overflow-y-scroll">
+        <main className="flex-1 p-4 md:p-8">
           {children}
         </main>
       </div>

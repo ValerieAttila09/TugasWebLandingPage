@@ -13,13 +13,12 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   const currentPath = usePathname();
-  const isHomePage = currentPath === '/'; // Cek apakah ini halaman utama
+  const isHomePage = currentPath === '/';
   const [isScrolled, setIsScrolled] = useState(false);
   const { isOpen, toggleSidebar } = useSidebarStore();
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    // Hanya tambahkan scroll listener jika di halaman utama
     if (isHomePage) {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
@@ -27,17 +26,14 @@ const Navbar = () => {
       };
 
       window.addEventListener('scroll', handleScroll);
-      // Jalankan sekali saat mount untuk memeriksa posisi scroll awal
       handleScroll();
 
-      // Hapus listener saat komponen unmount
       return () => window.removeEventListener('scroll', handleScroll);
     }
-  }, [isHomePage]); // Efek ini bergantung pada isHomePage
+  }, [isHomePage]);
 
   useGSAP(() => {
     if (navRef.current) {
-      // Buat navbar solid jika di-scroll ATAU jika bukan di halaman utama
       if (isScrolled || !isHomePage) {
         gsap.to(navRef.current, {
           backgroundColor: 'rgba(29, 29, 29, 0.4)',
@@ -48,7 +44,6 @@ const Navbar = () => {
           ease: 'power2.out',
         });
       } else {
-        // Buat navbar transparan jika di halaman utama dan di paling atas
         gsap.to(navRef.current, {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           borderBottomWidth: '0px',
@@ -59,14 +54,13 @@ const Navbar = () => {
         });
       }
     }
-  }, { dependencies: [isScrolled, isHomePage] }); // Tambahkan isHomePage sebagai dependensi
+  }, { dependencies: [isScrolled, isHomePage] });
 
   return (
     <div ref={navRef} className='fixed bg-neutral-950/25 backdrop-blur-xs z-100 top-0 right-0 left-0 border-b border-neutral-600/35'>
 
       <nav className='w-full px-4 sm:px-8 flex items-center justify-between py-1.5'>
         <div className='flex items-center gap-6 sm:gap-12'>
-
           <Link href={"/"} className="flex items-center cursor-pointer shrink-0">
             <div className='size-8 ms-2 sm:ms-4 me-2 my-2 flex items-center justify-center rounded-lg bg-linear-to-br from-purple-800 via-black to-violet-700 border-2 border-violet-400'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-violet-200">
