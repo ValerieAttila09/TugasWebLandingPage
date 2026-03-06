@@ -95,14 +95,7 @@ const ServicesComparison = () => {
                 </th>
                 {pricingTiers.map((tier) => (
                   <th key={tier.name} className="text-center py-4 px-6 font-semibold text-white relative">
-                    <div>
-                      {tier.popular && (
-                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                          <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                            POPULAR
-                          </span>
-                        </div>
-                      )}
+                    <div className={`${tier.popular && "text-purple-400"}`}>
                       {tier.name}
                     </div>
                   </th>

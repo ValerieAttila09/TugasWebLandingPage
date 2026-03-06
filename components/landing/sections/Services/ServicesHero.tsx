@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { slideInFromTopVariants, slideInFromBottomVariants } from '@/lib/animations';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { Button } from '@/components/ui/button';
+import FloatingLines from '@/components/ReactBits/FloatingLines';
 
 const ServicesHero = () => {
   const { ref, isInView } = useScrollAnimation({ threshold: 0.3 });
@@ -12,7 +13,7 @@ const ServicesHero = () => {
   return (
     <motion.section
       ref={ref}
-      className="w-full min-h-[60vh] md:min-h-[70vh] px-6 sm:px-8 md:px-12 py-12 md:py-24 flex items-center justify-center"
+      className="w-full min-h-screen relative px-6 sm:px-8 md:px-12 py-12 md:py-24 flex items-center justify-center"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={{
@@ -20,7 +21,20 @@ const ServicesHero = () => {
         visible: { opacity: 1, transition: { duration: 0.6 } },
       }}
     >
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="absolute z-1 inset-0 w-full h-full">
+        <div className='w-full h-full relative'>
+          <FloatingLines
+            enabledWaves={["top", "middle", "bottom"]}
+            lineCount={5}
+            lineDistance={5}
+            bendRadius={5}
+            bendStrength={-0.5}
+            interactive={true}
+            parallax={true}
+          />
+        </div>
+      </div>
+      <div className="absolute inset-0 z-5 max-w-5xl mx-auto flex flex-col items-center justify-center text-center">
         <motion.div
           className="mb-6"
           variants={{
@@ -53,7 +67,7 @@ const ServicesHero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto mb-8"
+            className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto mb-8"
             variants={slideInFromTopVariants}
           >
             Everything you need to build, deploy, and scale modern applications. From real-time databases to authentication, we've got your backend covered.
